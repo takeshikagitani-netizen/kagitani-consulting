@@ -93,19 +93,19 @@
       pointer-events: none;
     }
     .hero-eyebrow {
-      font-size: 11px; letter-spacing: .35em; color: var(--blue);
-      text-transform: uppercase; margin-bottom: 36px;
+      font-size: clamp(13px, 1.6vw, 16px); letter-spacing: .2em; color: var(--blue);
+      text-transform: uppercase; margin-bottom: 36px; font-weight: 500;
     }
     .hero h1 {
-      font-size: clamp(28px, 5vw, 58px);
-      font-weight: 700; line-height: 1.32; color: #fff;
-      margin-bottom: 28px;
+      font-size: clamp(24px, 4vw, 50px);
+      font-weight: 700; line-height: 1.5; color: #fff;
+      margin-bottom: 32px;
       font-family: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
     }
     .hero h1 em { color: var(--amber); font-style: normal; }
     .hero-lead {
-      font-size: clamp(14px, 1.8vw, 17px); color: var(--muted);
-      max-width: 580px; margin: 0 auto 56px; line-height: 2;
+      font-size: clamp(16px, 1.8vw, 18px); color: var(--muted);
+      max-width: 620px; margin: 0 auto 56px; line-height: 2;
     }
     .hero-stats {
       display: flex; gap: 0; margin-bottom: 52px;
@@ -143,8 +143,8 @@
     }
     .hero-feat:last-child { border-right: none; }
     .hero-feat svg { flex-shrink: 0; margin-top: 3px; }
-    .hero-feat h4 { font-size: 14px; color: #fff; margin-bottom: 5px; font-weight: 600; }
-    .hero-feat p { font-size: 13px; color: var(--muted); line-height: 1.75; }
+    .hero-feat h4 { font-size: 16px; color: #fff; margin-bottom: 6px; font-weight: 600; }
+    .hero-feat p { font-size: 15px; color: var(--muted); line-height: 1.85; }
 
     /* ─── SECTION BASE ─── */
     section { padding: 100px 32px; }
@@ -164,7 +164,7 @@
     /* ─── STORY ─── */
     .story { background: var(--navy2); }
     .story-text {
-      font-size: clamp(14px, 1.8vw, 16px); line-height: 2.1;
+      font-size: clamp(16px, 1.8vw, 18px); line-height: 2.1;
       color: rgba(255,255,255,.75);
     }
     .story-text p { margin-bottom: 28px; }
@@ -198,7 +198,7 @@
       font-size: clamp(18px, 2.5vw, 22px); font-weight: 800; color: #fff;
       line-height: 1.35; margin-bottom: 10px;
     }
-    .result-card .desc { font-size: 13px; color: var(--muted); line-height: 1.75; }
+    .result-card .desc { font-size: 15px; color: var(--muted); line-height: 1.85; }
 
     /* ─── WHO ─── */
     .who { background: var(--navy2); }
@@ -211,7 +211,7 @@
     .who-col.no h3 { color: var(--muted2); border-bottom-color: var(--line); }
     .who-list { list-style: none; }
     .who-list li {
-      font-size: 14px; color: rgba(255,255,255,.7);
+      font-size: 15px; color: rgba(255,255,255,.7);
       padding: 9px 0 9px 22px;
       border-bottom: 1px solid var(--line);
       position: relative;
@@ -234,7 +234,7 @@
     .svc-card h3 { font-size: clamp(17px, 2.5vw, 22px); font-weight: 700; color: #fff; margin-bottom: 20px; }
     .svc-list { list-style: none; }
     .svc-list li {
-      font-size: 14px; color: rgba(255,255,255,.7);
+      font-size: 15px; color: rgba(255,255,255,.7);
       padding: 8px 0 8px 18px; border-bottom: 1px solid var(--line);
       position: relative;
     }
@@ -291,7 +291,7 @@
     }
     .profile-content h3 { font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: #fff; margin-bottom: 4px; }
     .profile-title { font-size: 13px; color: var(--blue); letter-spacing: .1em; margin-bottom: 24px; }
-    .profile-text { font-size: 14px; color: rgba(255,255,255,.7); line-height: 2; margin-bottom: 16px; }
+    .profile-text { font-size: 15px; color: rgba(255,255,255,.7); line-height: 2; margin-bottom: 16px; }
     .career { list-style: none; margin-top: 8px; }
     .career li {
       font-size: 13px; color: var(--muted);
@@ -308,7 +308,7 @@
     }
     .faq-q::before { content: 'Q'; color: var(--blue); font-size: 13px; font-weight: 800; flex-shrink: 0; margin-top: 2px; }
     .faq-a {
-      font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.95;
+      font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.95;
       padding-left: 28px;
     }
 
@@ -431,13 +431,14 @@
   <div class="glow-r"></div>
   <div class="hero-eyebrow">現役経営者による実践型 伴走コンサルティング</div>
   <h1>
-    売上でも、組織でも、<br/>
-    「なぜかうまくいかない」には<br/>
-    <em>必ず、突破口がある。</em>
+    売上が伸びない。組織が機能しない。<br/>
+    その原因は、感覚ではなく<em>「構造」</em>にあります。<br/>
+    構造を分解すれば、打ち手は明確になります。<br/>
+    <em>そして、それは再現可能です。</em>
   </h1>
   <p class="hero-lead">
     手元2万円・107人に反対されながら起業し、20年で累計売上524億円。<br/>
-    現役経営者が、あなたの経営課題に直接向き合います。
+    現役経営者が、机上ではなく実務で<br/>あなたの経営課題を整理し、動かします。
   </p>
   <div class="hero-stats">
     <div class="hero-stat">
@@ -467,7 +468,7 @@
       </svg>
       <div>
         <h4>ティーチング × コーチング</h4>
-        <p>知見を渡しながら、あなた自身の答えを引き出す。「教える」と「引き出す」を融合した伴走スタイル。</p>
+        <p>知識の提供で終わらせません。意思決定できる状態まで整理します。</p>
       </div>
     </div>
     <div class="hero-feat">
@@ -478,8 +479,8 @@
         <line x1="2" y1="26" x2="26" y2="26" stroke="#6eb4f7" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <div>
-        <h4>売上・組織・採用を横断的に</h4>
-        <p>現役経営者の視点で、経営のボトルネックを特定。優先順位を整理して、次の一手を共に考えます。</p>
+        <h4>売上・組織・採用を横断</h4>
+        <p>部分最適ではなく、構造全体を見ます。ボトルネックを特定し、優先順位を明確にします。</p>
       </div>
     </div>
     <div class="hero-feat">
@@ -490,8 +491,8 @@
         <line x1="14" y1="21.5" x2="14" y2="23" stroke="#6eb4f7" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <div>
-        <h4>NDA締結・情報は厳重管理</h4>
-        <p>正式契約前にNDAを締結。決算書等の財務情報を外部へ開示することは一切ありません。</p>
+        <h4>NDA・情報管理</h4>
+        <p>正式契約前にNDA締結。財務情報含め、外部開示は一切行いません。</p>
       </div>
     </div>
   </div>
@@ -502,10 +503,10 @@
   <div class="container">
     <p class="section-label fade">STORY</p>
     <div class="divider fade"></div>
-    <h2 class="section-title fade">手元2万円・107人に反対された男が、<br/><em>なぜ524億を動かせたのか。</em></h2>
+    <h2 class="section-title fade">手元たったの2万円、<br/>107人の社長に絶対に失敗すると否定された状態から、<br/><em>なぜ累計売上524億まで伸ばせたのか。</em></h2>
     <div class="story-text fade">
       <p>
-        スポーツ用品の営業マンとして働きながら、夜はテニスコーチとして副業していた頃、「起業したい」と相談した<span class="hl">108人の経営者のうち、107人に反対されました。</span>
+        スポーツ用品の営業マンとして働きながら、夜はテニスコーチとして副業していた頃、「起業したい」と<span class="hl">相談した107人の経営者全員に失敗すると反対されました。</span>
       </p>
       <p>
         それでも手元の<span class="hl">2万円</span>を握りしめ、ソフトテニスの指導者インタビューをカセットテープで販売するビジネスを始めました。最初の6ヶ月間は、1本も売れませんでした。
@@ -514,10 +515,21 @@
         「失敗しても2万円の話。やらずに後悔するより、やって学んだほうがいい。」
       </div>
       <p>
+        そこから、<br/>
+        ・商品設計<br/>
+        ・販売導線<br/>
+        ・組織構築<br/>
+        を試行錯誤しながら積み上げ、複数事業を展開し、累計売上524億円まで成長させました。
+      </p>
+      <p>
         その後、DVD教材・歯科/接骨院向けセミナー・プロテインブランド「ビーレジェンド」（0から立ち上げ）・冷凍弁当事業・スポーツアパレル事業・テニススクール・D2C通販・トレーニングジム・カフェ事業・通信教育・地場産業活性化事業と、業種を問わず次々に事業を展開。スタッフ0人から<span class="hl">最大130名超の組織</span>を率い、累計売上<span class="hl">524億円</span>を積み上げてきました。
       </p>
       <p>
         「命を授かった以上、世の中の役に立ちたい。」これまでの失敗と成功のすべてを、次の世代の経営者に還元したいと思っています。コンサルタントとしての私は「ティーチング（知見提供）」と「コーチング（引き出す）」を融合させた伴走スタイルで、あなたの経営の突破口を一緒に見つけます。
+      </p>
+      <p style="margin-top:40px;padding-top:32px;border-top:1px solid var(--line);color:rgba(255,255,255,.85);">
+        この過程で一貫していたのは、<span class="hl">「感覚ではなく構造で考える」</span>という点です。<br/>
+        現在はその経験をもとに、経営課題を構造で整理し、実行まで伴走しています。
       </p>
     </div>
   </div>
@@ -537,9 +549,11 @@
           商品企画・価格設計・Web集客・EC運営・リピート施策・組織拡大まで、<span style="color:var(--amber2);font-weight:600;">売れる仕組みをゼロから作った実体験</span>が、私のコンサルティングの核心です。「知っている」ではなく「やってきた」から伝えられることがあります。
         </p>
       </div>
-      <div class="belegend-brand">
-        <div class="belegend-logo">be<span>LEGEND</span></div>
-        <div class="belegend-sub">ビーレジェンド</div>
+      <div class="belegend-brand" style="background:#f5f0ee;border-color:rgba(0,0,0,.1);">
+        <div class="belegend-logo" style="color:#1a0f0a;font-size:13px;font-weight:400;letter-spacing:.05em;line-height:1.2;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;">
+          <span style="font-size:13px;font-style:italic;">be</span><span style="font-size:26px;font-weight:900;letter-spacing:.04em;">LEGEND</span><span style="font-size:13px;">.</span>
+        </div>
+        <div class="belegend-sub" style="color:#5a4a3a;margin-top:6px;">ビーレジェンド</div>
         <div class="belegend-stats">
           <div class="belegend-stat">
             <div class="n">0から</div>
@@ -566,7 +580,7 @@
   <div class="container">
     <p class="section-label fade" style="text-align:center">RESULTS</p>
     <div class="divider fade" style="margin:0 auto 18px"></div>
-    <h2 class="section-title fade" style="text-align:center">数字が、証明する。</h2>
+    <h2 class="section-title fade" style="text-align:center">結果は、<em>構造で再現できます。</em></h2>
     <div class="results-grid fade">
       <div class="result-card">
         <div class="card-accent"></div>
@@ -629,10 +643,13 @@
             <line x1="16" y1="9" x2="16" y2="23" stroke="#6eb4f7" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="9" y1="16" x2="23" y2="16" stroke="#6eb4f7" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
-          <p style="font-size:13px;color:rgba(110,180,247,.6);">あなたの事例が、ここに加わるかもしれません。</p>
+          <p style="font-size:15px;color:rgba(110,180,247,.6);">あなたの事例が、ここに加わるかもしれません。</p>
         </div>
       </div>
     </div>
+    <p class="fade" style="text-align:center;margin-top:36px;font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:32px;">
+      全事例に共通しているのは、<strong style="color:var(--amber2);">「構造の整理と優先順位の再設計」</strong>です。
+    </p>
   </div>
 </section>
 
@@ -641,27 +658,25 @@
   <div class="container">
     <p class="section-label fade" style="text-align:center">FOR WHOM</p>
     <div class="divider fade" style="margin:0 auto 18px"></div>
-    <h2 class="section-title fade" style="text-align:center">こんな経営者と、<em>一緒に動きたい。</em></h2>
+    <h2 class="section-title fade" style="text-align:center"><em>このような経営者</em>に適しています</h2>
     <div class="who-grid fade">
       <div class="who-col yes">
         <h3>このような方に向いています</h3>
         <ul class="who-list">
-          <li>売上・組織の課題を本気で解決したい</li>
-          <li>自ら動き、変化を恐れない</li>
-          <li>中長期で事業を強くしたい</li>
-          <li>IPO・規模拡大・売上倍増を視野に入れている</li>
+          <li>売上・組織の課題を構造的に整理したい</li>
+          <li>自分で意思決定し、実行できる</li>
+          <li>中長期で事業を伸ばしたい</li>
+          <li>感覚ではなく、再現性を求めている</li>
           <li>人材育成・採用に課題を感じている</li>
           <li>新規事業・次の柱を探している</li>
-          <li>理念経営で会社の土台を固めたい</li>
         </ul>
       </div>
       <div class="who-col no">
         <h3>ミスマッチになりやすい方</h3>
         <ul class="who-list">
-          <li>「任せたのだからあとはよろしく」</li>
-          <li>答えだけほしい・自分では考えたくない</li>
-          <li>現状維持が最優先</li>
-          <li>行動せずに悩み続けることが目的になっている</li>
+          <li>判断を委ねたいだけの方</li>
+          <li>答えだけを求める方</li>
+          <li>実行しない前提の方</li>
         </ul>
       </div>
     </div>
@@ -672,18 +687,17 @@
 <section>
   <div class="container">
     <p class="section-label fade">SERVICE</p>
-    <h2 class="section-title fade">提供できること</h2>
+    <h2 class="section-title fade">提供内容</h2>
     <div class="svc-card featured fade">
       <span class="svc-tag">MAIN SERVICE</span>
       <h3>経営伴走コンサルティング</h3>
       <ul class="svc-list">
-        <li>定期セッション（月1〜2回、Zoom または対面）</li>
-        <li>対面セッションの場合、交通費・宿泊費は別途。対応できない日程・エリアもあります</li>
-        <li>Chatworkでの随時相談対応（必要に応じて他ツールも対応可・迅速返答）</li>
-        <li>経営課題の言語化・優先順位の整理</li>
-        <li>売上・利益・組織・採用・マーケティングを横断的にカバー</li>
-        <li>月次レビュー＆次の打ち手の提案</li>
-        <li>必要に応じた幹部・社員向けセッション対応</li>
+        <li>月1〜2回の定期セッション（Zoom または対面）</li>
+        <li>経営課題の言語化と構造整理</li>
+        <li>売上・組織・採用・マーケを横断支援</li>
+        <li>月次レビューと打ち手設計</li>
+        <li>Chatworkでの随時相談（必要に応じて他ツール対応可）</li>
+        <li>対面の場合、交通費・宿泊費は別途。対応できない日程・エリアもあります</li>
       </ul>
     </div>
     <div class="svc-card fade">
@@ -709,6 +723,30 @@
         <li>④ サービス内容・条件をご提示・合意</li>
         <li>⑤ 決算書等の資料をご共有いただき、本格開始</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section style="background:var(--navy3);">
+  <div class="container">
+    <p class="section-label fade" style="text-align:center">WHY IT WORKS</p>
+    <div class="divider fade" style="margin:0 auto 18px"></div>
+    <h2 class="section-title fade" style="text-align:center">なぜ<em>機能するのか</em></h2>
+    <div class="fade" style="max-width:680px;margin:0 auto;font-size:clamp(16px,1.8vw,18px);color:rgba(255,255,255,.8);line-height:2.1;">
+      <p style="margin-bottom:28px;">私は</p>
+      <p style="margin-bottom:28px;padding-left:24px;border-left:3px solid var(--amber);color:#fff;">
+        ・ゼロから事業を立ち上げ<br/>
+        ・複数事業で売上を伸ばし<br/>
+        ・組織を構築してきました
+      </p>
+      <p style="margin-bottom:28px;">
+        その中で、成果が出るかどうかは<span style="color:var(--amber2);font-weight:700;">「構造」でほぼ決まる</span>と理解しています。
+      </p>
+      <p>
+        「知っている」ではなく「やってきた」から伝えられることがあります。<br/>
+        コンサルティングでお伝えするのは、机上の理論ではなく、実務で積み上げた再現性のある打ち手です。
+      </p>
     </div>
   </div>
 </section>
@@ -786,9 +824,9 @@
   <div class="container">
     <p class="section-label fade" style="text-align:center">CONTACT</p>
     <div class="divider fade" style="margin:0 auto 18px"></div>
-    <h2 class="section-title fade" style="text-align:center">まず、あなたの話を<em>聞かせてください。</em></h2>
-    <p class="fade" style="text-align:center;font-size:14px;color:var(--muted);margin-bottom:40px;margin-top:-32px;">
-      フォーム送信後、3営業日以内にご連絡します。初回30分のヒアリングは無料です。
+    <h2 class="section-title fade" style="text-align:center">まず、<em>現状を整理するところから</em>始めます。</h2>
+    <p class="fade" style="text-align:center;font-size:16px;color:var(--muted);margin-bottom:40px;margin-top:-32px;">
+      30分の無料ヒアリングで対応します。フォーム送信後、3営業日以内にご連絡します。
     </p>
     <div class="form-wrap fade">
       <div id="form-container">
