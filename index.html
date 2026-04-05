@@ -74,10 +74,10 @@
 
     /* ─── HERO ─── */
     .hero {
-      min-height: 100vh;
+      min-height: auto;
       display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center; padding: 100px 32px 0;
+      justify-content: flex-start; align-items: center;
+      text-align: center; padding: 56px 32px 0;
       position: relative; overflow: hidden;
     }
     .glow-l {
@@ -97,9 +97,9 @@
       text-transform: uppercase; margin-bottom: 36px; font-weight: 500;
     }
     .hero h1 {
-      font-size: clamp(24px, 4vw, 50px);
-      font-weight: 700; line-height: 1.5; color: #fff;
-      margin-bottom: 32px;
+      font-size: clamp(20px, 3vw, 38px);
+      font-weight: 700; line-height: 1.55; color: #fff;
+      margin-bottom: 28px;
       font-family: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
     }
     .hero h1 em { color: var(--amber); font-style: normal; }
@@ -147,7 +147,7 @@
     .hero-feat p { font-size: 15px; color: var(--muted); line-height: 1.85; }
 
     /* ─── SECTION BASE ─── */
-    section { padding: 100px 32px; }
+    section { padding: 72px 32px; }
     .container { max-width: 880px; margin: 0 auto; }
     .section-label {
       font-size: 10px; letter-spacing: .35em; color: var(--blue);
@@ -208,7 +208,8 @@
       border-bottom: 1px solid rgba(110,180,247,.2);
       padding-bottom: 12px; margin-bottom: 20px;
     }
-    .who-col.no h3 { color: var(--muted2); border-bottom-color: var(--line); }
+    .who-col.no { background: rgba(0,0,0,.18); border-radius: 6px; padding: 20px; }
+    .who-col.no h3 { color: rgba(255,255,255,.3); border-bottom-color: rgba(255,255,255,.08); }
     .who-list { list-style: none; }
     .who-list li {
       font-size: 15px; color: rgba(255,255,255,.7);
@@ -216,9 +217,9 @@
       border-bottom: 1px solid var(--line);
       position: relative;
     }
-    .who-col.yes .who-list li::before { content: '—'; color: var(--blue); position: absolute; left: 0; top: 9px; }
-    .who-col.no  .who-list li::before { content: '—'; color: #333; position: absolute; left: 0; top: 9px; }
-    .who-col.no  .who-list li { color: var(--muted2); }
+    .who-col.yes .who-list li::before { content: '✓'; color: var(--blue); position: absolute; left: 0; top: 9px; font-size:12px; }
+    .who-col.no  .who-list li::before { content: '✗'; color: rgba(255,255,255,.2); position: absolute; left: 0; top: 9px; font-size:12px; }
+    .who-col.no  .who-list li { color: rgba(255,255,255,.3); border-bottom-color: rgba(255,255,255,.06); }
 
     /* ─── SERVICE ─── */
     .svc-card {
@@ -275,7 +276,7 @@
     .belegend-sub { font-size: 11px; color: var(--muted2); letter-spacing: .2em; margin-bottom: 20px; }
     .belegend-stats { display: flex; flex-direction: column; gap: 12px; }
     .belegend-stat { text-align: center; }
-    .belegend-stat .n { font-size: 24px; font-weight: 900; color: var(--blue); line-height: 1; }
+    .belegend-stat .n { font-size: 20px; font-weight: 900; color: #fff; line-height: 1; }
     .belegend-stat .l { font-size: 10px; color: var(--muted2); margin-top: 3px; letter-spacing: .1em; }
     /* 実績カード ビジュアル */
     .result-card { position: relative; overflow: hidden; }
@@ -506,7 +507,7 @@
     <h2 class="section-title fade">手元たったの2万円、<br/>107人の社長に絶対に失敗すると否定された状態から、<br/><em>なぜ累計売上524億まで伸ばせたのか。</em></h2>
     <div class="story-text fade">
       <p>
-        スポーツ用品の営業マンとして働きながら、夜はテニスコーチとして副業していた頃、「起業したい」と<span class="hl">相談した107人の経営者全員に失敗すると反対されました。</span>
+        昼はスポーツ用品の営業マン、夜はテニスコーチとして働いていた頃、「起業したい」と<span class="hl">相談した107人の経営者全員に失敗すると反対されました。</span>
       </p>
       <p>
         それでも手元の<span class="hl">2万円</span>を握りしめ、ソフトテニスの指導者インタビューをカセットテープで販売するビジネスを始めました。最初の6ヶ月間は、1本も売れませんでした。
@@ -515,14 +516,14 @@
         「失敗しても2万円の話。やらずに後悔するより、やって学んだほうがいい。」
       </div>
       <p>
-        そこから、<br/>
+        そこから、起業し<br/>
         ・商品設計<br/>
         ・販売導線<br/>
         ・組織構築<br/>
-        を試行錯誤しながら積み上げ、複数事業を展開し、累計売上524億円まで成長させました。
+        を試行錯誤しながら積み上げ、複数事業を展開し、20年間で累計売上524億円まで成長させました。
       </p>
       <p>
-        その後、DVD教材・歯科/接骨院向けセミナー・プロテインブランド「ビーレジェンド」（0から立ち上げ）・冷凍弁当事業・スポーツアパレル事業・テニススクール・D2C通販・トレーニングジム・カフェ事業・通信教育・地場産業活性化事業と、業種を問わず次々に事業を展開。スタッフ0人から<span class="hl">最大130名超の組織</span>を率い、累計売上<span class="hl">524億円</span>を積み上げてきました。
+        この20年で、DVD教材・歯科/接骨院向けセミナー・プロテインブランド「ビーレジェンド」（0から立ち上げ）・冷凍弁当事業・スポーツアパレル事業・テニススクール・D2C通販・トレーニングジム・カフェ事業・通信教育・地場産業活性化事業と、業種を問わず次々に<span class="hl">合計29の事業を展開。</span>スタッフ0人から<span class="hl">最大130名超の組織</span>を率い、累計売上<span class="hl">524億円</span>を積み上げてきました。
       </p>
       <p>
         「命を授かった以上、世の中の役に立ちたい。」これまでの失敗と成功のすべてを、次の世代の経営者に還元したいと思っています。コンサルタントとしての私は「ティーチング（知見提供）」と「コーチング（引き出す）」を融合させた伴走スタイルで、あなたの経営の突破口を一緒に見つけます。
@@ -549,11 +550,11 @@
           商品企画・価格設計・Web集客・EC運営・リピート施策・組織拡大まで、<span style="color:var(--amber2);font-weight:600;">売れる仕組みをゼロから作った実体験</span>が、私のコンサルティングの核心です。「知っている」ではなく「やってきた」から伝えられることがあります。
         </p>
       </div>
-      <div class="belegend-brand" style="background:#f5f0ee;border-color:rgba(0,0,0,.1);">
-        <div class="belegend-logo" style="color:#1a0f0a;font-size:13px;font-weight:400;letter-spacing:.05em;line-height:1.2;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;">
-          <span style="font-size:13px;font-style:italic;">be</span><span style="font-size:26px;font-weight:900;letter-spacing:.04em;">LEGEND</span><span style="font-size:13px;">.</span>
+      <div class="belegend-brand" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);">
+        <div style="line-height:1.1;margin-bottom:8px;">
+          <span style="font-size:12px;font-style:italic;font-family:'Hiragino Mincho ProN','Yu Mincho',Georgia,serif;color:#fff;font-weight:400;letter-spacing:.02em;">be</span><span style="font-size:28px;font-weight:900;font-family:'Hiragino Sans','Noto Sans JP',sans-serif;color:#fff;letter-spacing:.06em;">LEGEND</span><span style="font-size:14px;color:#fff;font-weight:700;">.</span>
         </div>
-        <div class="belegend-sub" style="color:#5a4a3a;margin-top:6px;">ビーレジェンド</div>
+        <div class="belegend-sub">ビーレジェンド</div>
         <div class="belegend-stats">
           <div class="belegend-stat">
             <div class="n">0から</div>
@@ -587,9 +588,27 @@
         <div class="card-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="3,15 8,9 12,12 17,5" stroke="#f0a030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <p class="tag">医療・看護師（副業スタート）</p>
-        <p class="val">3ヶ月で<br/>月収100万円超</p>
-        <p class="desc">副業ゼロから、単価と集客を戦略的に設計。わずか3ヶ月で本業超えを達成。</p>
+        <p class="tag">小売業（新規事業）</p>
+        <p class="val">5ヶ月で<br/>収入2.5倍</p>
+        <p class="desc">起業から5ヶ月で5つの事業を同時展開。半年で収入がサラリーマン時代の約2.5倍に。</p>
+      </div>
+      <div class="result-card">
+        <div class="card-accent"></div>
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="13" r="2.5" stroke="#6eb4f7" stroke-width="1.5"/><circle cx="13" cy="7" r="2.5" stroke="#6eb4f7" stroke-width="1.5"/><line x1="9" y1="11.5" x2="11" y2="8.5" stroke="#6eb4f7" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+        <p class="tag">製造業（組織改善）</p>
+        <p class="val">理念浸透で<br/>管理職が変わった</p>
+        <p class="desc">経営理念の見直しにより、社長と管理職の意思疎通が劇的に改善。主体性を持って業務に取り組む組織へ。</p>
+      </div>
+      <div class="result-card">
+        <div class="card-accent"></div>
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="3,15 8,9 12,12 17,5" stroke="#f0a030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="tag">小売業（売上アップ）</p>
+        <p class="val">創業4年目で<br/>初の黒字化</p>
+        <p class="desc">コンサル開始から3ヶ月で通年黒字化が見えるように。月別売上・営業利益がアップし、来期以降も黒字見通し。</p>
       </div>
       <div class="result-card">
         <div class="card-accent"></div>
@@ -619,6 +638,15 @@
         <p class="desc">商品設計・ページ訴求・集客の三点を見直し、売上を約2倍に。</p>
       </div>
       <div class="result-card">
+        <div class="card-accent" style="background:linear-gradient(90deg,#f0a030,#ffc055);"></div>
+        <div class="card-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="3,15 8,9 12,12 17,5" stroke="#f0a030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="tag">食品関連機器販売業</p>
+        <p class="val">コンサル開始<br/>5ヶ月で売上4倍</p>
+        <p class="desc">2年間伸び悩んでいた専門機器の販売事業。戦略の整理と打ち手の優先順位を組み直し、わずか5ヶ月で売上が4倍に急拡大。</p>
+      </div>
+      <div class="result-card">
         <div class="card-accent"></div>
         <div class="card-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="3,15 8,9 12,12 17,5" stroke="#f0a030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -628,23 +656,13 @@
         <p class="desc">スキルの棚卸しと情報発信設計により、本業外での収入を確立。</p>
       </div>
       <div class="result-card">
-        <div class="card-accent" style="background:linear-gradient(90deg,#f0a030,#ffc055);"></div>
+        <div class="card-accent"></div>
         <div class="card-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polyline points="3,15 8,9 12,12 17,5" stroke="#f0a030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <p class="tag">食品関連機器販売業</p>
-        <p class="val">コンサル開始<br/>5ヶ月で売上4倍</p>
-        <p class="desc">2年間伸び悩んでいた専門機器の販売事業。戦略の整理と打ち手の優先順位を組み直し、わずか5ヶ月で売上が4倍に急拡大。</p>
-      </div>
-      <div class="result-card" style="display:flex;align-items:center;justify-content:center;text-align:center;border-style:dashed;border-color:rgba(110,180,247,.2);">
-        <div>
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="margin-bottom:12px;opacity:.5">
-            <circle cx="16" cy="16" r="14" stroke="#6eb4f7" stroke-width="1.5"/>
-            <line x1="16" y1="9" x2="16" y2="23" stroke="#6eb4f7" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="9" y1="16" x2="23" y2="16" stroke="#6eb4f7" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <p style="font-size:15px;color:rgba(110,180,247,.6);">あなたの事例が、ここに加わるかもしれません。</p>
-        </div>
+        <p class="tag">医療・看護師（副業スタート）</p>
+        <p class="val">3ヶ月で<br/>月収100万円超</p>
+        <p class="desc">副業ゼロから、単価と集客を戦略的に設計。わずか3ヶ月で本業超えを達成。</p>
       </div>
     </div>
     <p class="fade" style="text-align:center;margin-top:36px;font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:32px;">
@@ -706,9 +724,9 @@
       <ul class="svc-list">
         <li>売上・収益改善／価格戦略</li>
         <li>組織づくり・マネジメント・採用</li>
-        <li>マーケティング・集客・D2C通販・EC</li>
         <li>新規事業開発・多角化戦略</li>
         <li>理念経営・企業文化の構築</li>
+        <li>マーケティング・集客・D2C通販・EC</li>
         <li>M&amp;A・EXIT戦略の壁打ち</li>
         <li>資金調達・補助金活用（連携対応）</li>
       </ul>
@@ -719,9 +737,9 @@
       <ul class="svc-list">
         <li>① このフォームから相談内容をご入力</li>
         <li>② 内容確認後、初回30分ヒアリング（無料）を設定</li>
-        <li>③ ヒアリング後に秘密保持契約（NDA）を締結</li>
+        <li>③ ヒアリング後に秘密保持契約（NDA）を締結（事前に締結も可能）</li>
         <li>④ サービス内容・条件をご提示・合意</li>
-        <li>⑤ 決算書等の資料をご共有いただき、本格開始</li>
+        <li>⑤ 必要な情報をご共有いただき、本格開始</li>
       </ul>
     </div>
   </div>
@@ -766,7 +784,7 @@
           1973年、奈良県生まれ。スポーツ用品の営業と夜間のテニスコーチを掛け持ちしながら起業を決意。108人に相談し107人に反対されたが、手元2万円で創業。
         </p>
         <p class="profile-text">
-          ソフトテニス教材から始まり、DVD制作・歯科/接骨院向けセミナー・プロテインブランド「ビーレジェンド」（0から立ち上げ・販売）・冷凍弁当事業・スポーツアパレル事業・D2C通販・トレーニングジム・カフェ事業・通信教育・地場産業活性化事業など、20年以上にわたり複数事業を展開。累計売上524億円、組織最大130名超を経験。
+          ソフトテニス教材から始まり、DVD制作・歯科/接骨院向けセミナー・プロテインブランド「ビーレジェンド」（0から立ち上げ・販売）・冷凍弁当事業・スポーツアパレル事業・D2C通販・トレーニングジム・カフェ事業・通信教育・地場産業活性化事業など、20年以上にわたり、合計29の事業を展開。累計売上524億円、組織最大130名超を経験。
         </p>
         <ul class="career">
           <li>テニスショップ勤務・スポーツ用品営業・テニスコーチ（兼業）</li>
@@ -797,11 +815,11 @@
       </div>
       <div class="faq-item">
         <p class="faq-q">秘密保持（NDA）はどうなりますか？</p>
-        <p class="faq-a">初回ヒアリング後、正式なご支援開始の前にNDAを締結します。フォームにご記入いただいた情報、その後にご提供いただく決算書等の財務情報は、コンサルティング業務の目的のみに使用し、第三者への開示は一切行いません。</p>
+        <p class="faq-a">初回ヒアリング後、正式なご支援開始の前にNDAを締結します（事前締結も可能）。フォームにご記入いただいた情報、その後にご提供いただく情報は、コンサルティング業務の目的のみに使用し、第三者への開示は一切行いません。</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">決算書を見せることへの不安があります。</p>
-        <p class="faq-a">ご安心ください。決算書をお預かりするのは「責める」ためではなく、「現在地を正確に把握する」ためです。売上・利益・キャッシュの実態を共有いただくことで、的外れな提案ではなく、今の状況に本当に合った支援ができます。NDA締結後にご提供いただき、外部への開示・漏洩は一切ありません。</p>
+        <p class="faq-a">ご安心ください。情報をお預かりするのは「責める」ためではなく、「現在地を正確に把握する」ためです。事業の実態を共有いただくことで、的外れな提案ではなく、今の状況に本当に合った支援ができます。NDA締結後にご提供いただき、外部への開示・漏洩は一切ありません。</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">費用はいくらですか？</p>
@@ -918,7 +936,7 @@
           <div class="privacy-box">
             <p><strong>【個人情報の取り扱いについて】</strong></p>
             <p>ご入力いただいた個人情報は、株式会社Real Styleの<a href="https://store.belegend.jp/ext/privacy.html" target="_blank" rel="noopener" style="color:var(--amber2);text-decoration:underline;">個人情報保護方針</a>に基づき、コンサルティング検討・業務遂行の目的のみに使用します。ご本人の同意なく第三者へ開示・提供することは一切ありません。</p>
-            <p>後日ご提供いただく決算書等の財務情報も同様に厳重に管理（日本国内にて保管）し、外部への漏洩は一切ありません。正式なご契約前に秘密保持契約（NDA）を締結します。</p>
+            <p>後日ご提供いただく情報も同様に厳重に管理（日本国内にて保管）し、外部への漏洩は一切ありません。正式なご契約前に秘密保持契約（NDA）を締結します。</p>
             <p>個人情報に関するお問い合わせ：<strong>株式会社Real Style 個人情報問合せ窓口</strong>　TEL: 0120-242-044 / Email: info@real-style.co.jp（平日 9:30〜13:00）</p>
           </div>
 
