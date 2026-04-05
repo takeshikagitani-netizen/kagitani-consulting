@@ -7,15 +7,17 @@
   <meta name="description" content="累計売上524億円の現役経営者が、あなたの経営課題を直接サポート。中小企業・成長企業の経営者専用コンサルティング。" />
   <style>
     :root {
-      --navy:   #07102a;
-      --navy2:  #0d1a3a;
-      --navy3:  #132244;
-      --blue:   #6eb4f7;
-      --blue2:  #4a9aea;
+      --navy:   #112050;
+      --navy2:  #192c60;
+      --navy3:  #1e3370;
+      --blue:   #7ec8f8;
+      --blue2:  #5ab0f0;
+      --amber:  #f0a030;
+      --amber2: #ffc055;
       --text:   #ffffff;
-      --muted:  rgba(255,255,255,.45);
-      --muted2: rgba(255,255,255,.22);
-      --line:   rgba(255,255,255,.08);
+      --muted:  rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.45);
+      --line:   rgba(255,255,255,.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -29,33 +31,33 @@
     /* ─── STICKY BOTTOM CTA ─── */
     .sticky-cta {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-      background: rgba(4,8,20,.96);
+      background: rgba(14,26,64,.97);
       backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(110,180,247,.2);
+      border-top: 1px solid rgba(240,160,48,.25);
       padding: 14px 40px;
       display: flex; align-items: center; justify-content: space-between;
-      box-shadow: 0 -4px 40px rgba(0,0,0,.5);
+      box-shadow: 0 -4px 40px rgba(0,0,0,.4);
     }
     .sticky-cta p {
       font-size: 13px; color: var(--muted);
     }
-    .sticky-cta p strong { color: var(--blue); }
+    .sticky-cta p strong { color: var(--amber); }
     .btn-cta {
       display: inline-block;
-      background: var(--blue);
-      color: var(--navy);
+      background: var(--amber);
+      color: #fff;
       font-weight: 800; font-size: 15px;
       padding: 13px 32px; border-radius: 5px;
       text-decoration: none; letter-spacing: .04em;
       transition: all .2s; white-space: nowrap; border: none; cursor: pointer;
-      box-shadow: 0 4px 20px rgba(110,180,247,.35);
+      box-shadow: 0 4px 20px rgba(240,160,48,.4);
     }
-    .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(110,180,247,.5); }
+    .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(240,160,48,.55); }
 
     /* ─── HEADER ─── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(7,16,42,.94);
+      background: rgba(17,32,80,.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
       padding: 14px 48px;
@@ -100,31 +102,32 @@
       margin-bottom: 28px;
       font-family: 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
     }
-    .hero h1 em { color: var(--blue); font-style: normal; }
+    .hero h1 em { color: var(--amber); font-style: normal; }
     .hero-lead {
       font-size: clamp(14px, 1.8vw, 17px); color: var(--muted);
       max-width: 580px; margin: 0 auto 56px; line-height: 2;
     }
     .hero-stats {
       display: flex; gap: 0; margin-bottom: 52px;
-      border: 1px solid rgba(110,180,247,.2); border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(240,160,48,.25); border-radius: 8px; overflow: hidden;
+      background: rgba(255,255,255,.04);
     }
     .hero-stat {
-      padding: 22px 48px; border-right: 1px solid rgba(110,180,247,.15);
+      padding: 22px 48px; border-right: 1px solid rgba(240,160,48,.15);
       text-align: center;
     }
     .hero-stat:last-child { border-right: none; }
-    .hero-stat .n { font-size: clamp(26px, 4vw, 38px); font-weight: 900; color: var(--blue); line-height: 1; }
+    .hero-stat .n { font-size: clamp(26px, 4vw, 38px); font-weight: 900; color: var(--amber); line-height: 1; }
     .hero-stat .l { font-size: 11px; color: var(--muted2); margin-top: 6px; letter-spacing: .12em; }
     .btn-hero {
       display: inline-block; padding: 20px 56px;
-      background: var(--blue); color: var(--navy);
+      background: var(--amber); color: #fff;
       font-size: 17px; font-weight: 900;
       border-radius: 6px; letter-spacing: .05em; text-decoration: none;
-      box-shadow: 0 10px 40px rgba(110,180,247,.4);
+      box-shadow: 0 10px 40px rgba(240,160,48,.45);
       transition: all .25s;
     }
-    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(110,180,247,.55); }
+    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 16px 48px rgba(240,160,48,.6); }
     .hero-note { font-size: 12px; color: var(--muted2); margin-top: 14px; }
 
     /* feature strip */
@@ -155,7 +158,7 @@
       color: #fff; margin-bottom: 56px;
       font-family: 'Hiragino Mincho ProN','Yu Mincho',serif;
     }
-    .section-title em { color: var(--blue); font-style: normal; }
+    .section-title em { color: var(--amber); font-style: normal; }
     .divider { width: 36px; height: 1px; background: var(--blue); margin-bottom: 18px; }
 
     /* ─── STORY ─── */
@@ -165,9 +168,9 @@
       color: rgba(255,255,255,.75);
     }
     .story-text p { margin-bottom: 28px; }
-    .story-text .hl { color: var(--blue); font-weight: 700; }
+    .story-text .hl { color: var(--amber2); font-weight: 700; }
     .story-quote {
-      border-left: 3px solid var(--blue);
+      border-left: 3px solid var(--amber);
       padding: 20px 28px;
       background: rgba(110,180,247,.05);
       margin: 40px 0;
@@ -186,9 +189,9 @@
       border-radius: 6px; padding: 28px 24px;
       transition: border-color .2s;
     }
-    .result-card:hover { border-color: rgba(110,180,247,.35); }
+    .result-card:hover { border-color: rgba(240,160,48,.4); }
     .result-card .tag {
-      font-size: 10px; letter-spacing: .15em; color: var(--blue);
+      font-size: 10px; letter-spacing: .15em; color: var(--amber);
       margin-bottom: 12px; text-transform: uppercase;
     }
     .result-card .val {
@@ -222,10 +225,10 @@
       background: var(--navy2); border: 1px solid var(--line);
       border-radius: 6px; padding: 40px 36px; margin-bottom: 20px;
     }
-    .svc-card.featured { border-color: rgba(110,180,247,.35); background: linear-gradient(135deg, rgba(110,180,247,.06) 0%, var(--navy2) 100%); }
+    .svc-card.featured { border-color: rgba(240,160,48,.3); background: linear-gradient(135deg, rgba(240,160,48,.06) 0%, var(--navy2) 100%); }
     .svc-tag {
       display: inline-block; font-size: 10px; letter-spacing: .2em;
-      color: var(--blue); border: 1px solid rgba(110,180,247,.3);
+      color: var(--amber); border: 1px solid rgba(240,160,48,.35);
       padding: 4px 12px; margin-bottom: 16px; border-radius: 2px;
     }
     .svc-card h3 { font-size: clamp(17px, 2.5vw, 22px); font-weight: 700; color: #fff; margin-bottom: 20px; }
@@ -275,7 +278,7 @@
     .form-section { background: var(--navy2); }
     .form-section .container { max-width: 720px; }
     .form-wrap {
-      background: var(--navy3); border: 1px solid rgba(110,180,247,.2);
+      background: var(--navy3); border: 1px solid rgba(255,255,255,.12);
       border-radius: 8px; padding: 52px 48px;
     }
     .form-group { margin-bottom: 24px; }
@@ -297,35 +300,35 @@
     }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--blue); background: rgba(110,180,247,.04); }
+    .form-group textarea:focus { border-color: var(--amber); background: rgba(240,160,48,.04); }
     .form-group input::placeholder,
     .form-group textarea::placeholder { color: rgba(255,255,255,.2); }
     .form-group textarea { resize: vertical; min-height: 110px; }
     .form-group select option { background: #0d1a3a; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .privacy-box {
-      background: rgba(110,180,247,.05);
-      border: 1px solid rgba(110,180,247,.15);
+      background: rgba(240,160,48,.04);
+      border: 1px solid rgba(240,160,48,.2);
       border-radius: 4px; padding: 20px 22px; margin-bottom: 24px;
     }
     .privacy-box p { font-size: 12px; color: var(--muted); line-height: 1.85; margin-bottom: 8px; }
     .privacy-box p:last-child { margin-bottom: 0; }
-    .privacy-box strong { color: rgba(110,180,247,.9); }
+    .privacy-box strong { color: var(--amber2); }
     .form-checks { margin-bottom: 28px; }
     .form-check { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
     .form-check input[type="checkbox"] { width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px; accent-color: var(--blue); cursor: pointer; }
     .form-check label { font-size: 13px; color: rgba(255,255,255,.65); cursor: pointer; line-height: 1.65; }
     .btn-submit {
-      width: 100%; background: var(--blue); color: var(--navy);
+      width: 100%; background: var(--amber); color: #fff;
       font-weight: 900; font-size: 17px; padding: 20px;
       border-radius: 5px; border: none; cursor: pointer;
       letter-spacing: .05em; transition: all .25s;
-      box-shadow: 0 8px 32px rgba(110,180,247,.35);
+      box-shadow: 0 8px 32px rgba(240,160,48,.4);
     }
-    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 40px rgba(110,180,247,.5); }
+    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 40px rgba(240,160,48,.55); }
     .form-sub { text-align: center; font-size: 12px; color: var(--muted2); margin-top: 12px; }
     #success-msg { display: none; text-align: center; padding: 48px 24px; }
-    #success-msg h3 { font-size: 22px; color: var(--blue); margin-bottom: 16px; }
+    #success-msg h3 { font-size: 22px; color: var(--amber); margin-bottom: 16px; }
     #success-msg p { font-size: 15px; color: rgba(255,255,255,.7); }
 
     /* ─── FOOTER ─── */
