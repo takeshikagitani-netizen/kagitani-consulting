@@ -301,6 +301,35 @@
     }
     .career li::before { content: ''; position: absolute; left: 0; top: 16px; width: 6px; height: 1px; background: rgba(110,180,247,.5); }
 
+    /* ─── BOOKS ─── */
+    .books-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .book-card {
+      display: flex; gap: 24px; align-items: flex-start;
+      background: var(--navy2); border: 1px solid var(--line);
+      border-radius: 6px; padding: 28px 24px;
+    }
+    .book-card:hover { border-color: rgba(240,160,48,.3); }
+    .book-cover {
+      flex-shrink: 0; width: 100px;
+      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,.4);
+    }
+    .book-cover img { width: 100%; display: block; }
+    .book-info h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.5; }
+    .book-info p { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+    .btn-amazon {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #FF9900; color: #111; font-weight: 700;
+      font-size: 13px; padding: 8px 16px; border-radius: 4px;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .btn-amazon:hover { opacity: .85; }
+    @media (max-width: 700px) {
+      .books-grid { grid-template-columns: 1fr; }
+      .book-card { flex-direction: column; }
+      .book-cover { width: 80px; }
+    }
+
     /* ─── FAQ ─── */
     .faq-item { border-bottom: 1px solid var(--line); padding: 26px 0; }
     .faq-q {
@@ -528,6 +557,9 @@
       <p>
         「命を授かった以上、世の中の役に立ちたい。」これまでの失敗と成功のすべてを、次の世代の経営者に還元したいと思っています。コンサルタントとしての私は「ティーチング（知見提供）」と「コーチング（引き出す）」を融合させた伴走スタイルで、あなたの経営の突破口を一緒に見つけます。
       </p>
+      <p>
+        また、経営と並行して社会への貢献にも取り組んできました。<span class="hl">2009年、友人たちとともにウガンダに学校を建設。</span>現地の子どもたちの教育環境づくりに関わり、「事業で稼いだお金を、世の中に還元する」という想いを形にしました。これは今も私の経営哲学の根幹にあります。
+      </p>
       <p style="margin-top:40px;padding-top:32px;border-top:1px solid var(--line);color:rgba(255,255,255,.85);">
         この過程で一貫していたのは、<span class="hl">「感覚ではなく構造で考える」</span>という点です。<br/>
         現在はその経験をもとに、経営課題を構造で整理し、実行まで伴走しています。
@@ -570,6 +602,28 @@
             <div class="n">D2C通販</div>
             <div class="l">企画〜販売まで自社完結</div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="fade" style="margin-top:48px;border-top:1px solid rgba(255,255,255,.1);padding-top:40px;">
+      <p style="font-size:11px;letter-spacing:.25em;color:var(--blue);text-align:center;margin-bottom:24px;">COLLABORATION PRODUCTS</p>
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:28px;">ミルキー・白バラコーヒーなど、<strong style="color:#fff;">人気ブランドとのコラボ商品</strong>も多数展開。</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;max-width:700px;margin:0 auto;">
+        <div style="text-align:center;">
+          <img src="images/bl_milky.jpg" alt="ビーレジェンド×ミルキー" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
+          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">× ミルキー（不二家）</p>
+        </div>
+        <div style="text-align:center;">
+          <img src="images/bl_shirobara.jpg" alt="ビーレジェンド×白バラコーヒー" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
+          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">× 白バラコーヒー（大山乳業）</p>
+        </div>
+        <div style="text-align:center;">
+          <img src="images/bl_jujutsu.jpg" alt="ビーレジェンド×呪術廻戦" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
+          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">× 呪術廻戦</p>
+        </div>
+        <div style="text-align:center;">
+          <img src="images/bl_granblu.jpg" alt="ビーレジェンド×グランブルーファンタジー" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
+          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">× グランブルーファンタジー</p>
         </div>
       </div>
     </div>
@@ -797,6 +851,43 @@
           <li>スタッフ0 → 最大130名超の組織運営を経験</li>
           <li>累計売上524億円を達成</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section style="background:var(--navy2);">
+  <div class="container">
+    <p class="section-label fade">BOOKS</p>
+    <div class="divider fade"></div>
+    <h2 class="section-title fade">著書 <em>2冊</em></h2>
+    <div class="books-grid fade">
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="images/book1.jpg" alt="「大好き」を仕事にして月収100万円！" />
+        </div>
+        <div class="book-info">
+          <h3>「大好き」を仕事にして月収100万円！</h3>
+          <p>セルフコーチング＆起業であなたの人生は変えられる。<br/>あさ出版（2006年）</p>
+          <a href="https://amzn.to/4sPAuP9" target="_blank" rel="noopener" class="btn-amazon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.375 2.625A5.625 5.625 0 0112 9.375v1.125h-1.5V9.375a4.125 4.125 0 00-8.25 0V21h-1.5V9.375a5.625 5.625 0 015.625-5.75zM19.5 9.375v1.125H18V9.375a4.125 4.125 0 00-8.25 0v11.25H8.25V9.375a5.625 5.625 0 0111.25 0z"/></svg>
+            Amazonで見る →
+          </a>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <img src="images/book2.jpg" alt="最強の社風と成長の原理" />
+        </div>
+        <div class="book-info">
+          <h3>最強の社風と成長の原理</h3>
+          <p>小さな会社だからこそ「理念は力になる」Real Style ISM<br/>セルバ出版</p>
+          <a href="https://www.amazon.co.jp/dp/4868510312" target="_blank" rel="noopener" class="btn-amazon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.375 2.625A5.625 5.625 0 0112 9.375v1.125h-1.5V9.375a4.125 4.125 0 00-8.25 0V21h-1.5V9.375a5.625 5.625 0 015.625-5.75zM19.5 9.375v1.125H18V9.375a4.125 4.125 0 00-8.25 0v11.25H8.25V9.375a5.625 5.625 0 0111.25 0z"/></svg>
+            Amazonで見る →
+          </a>
+        </div>
       </div>
     </div>
   </div>
