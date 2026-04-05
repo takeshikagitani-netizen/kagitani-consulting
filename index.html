@@ -368,6 +368,19 @@
     #success-msg { display: none; text-align: center; padding: 48px 24px; }
     #success-msg h3 { font-size: 22px; color: var(--amber); margin-bottom: 16px; }
     #success-msg p { font-size: 15px; color: rgba(255,255,255,.7); }
+    #success-msg .booking-box {
+      margin: 32px auto; max-width: 480px;
+      background: rgba(240,160,48,.08); border: 1px solid rgba(240,160,48,.3);
+      border-radius: 8px; padding: 28px 24px;
+    }
+    #success-msg .booking-box p { font-size: 14px; color: rgba(255,255,255,.75); margin-bottom: 20px; }
+    #success-msg .btn-booking {
+      display: inline-block; background: var(--amber); color: #fff;
+      font-weight: 800; font-size: 16px; padding: 16px 40px;
+      border-radius: 5px; text-decoration: none; letter-spacing: .05em;
+      box-shadow: 0 8px 24px rgba(240,160,48,.4); transition: all .2s;
+    }
+    #success-msg .btn-booking:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(240,160,48,.55); }
 
     /* ─── FOOTER ─── */
     footer {
@@ -888,7 +901,12 @@
       </div>
       <div id="success-msg">
         <h3>ありがとうございます</h3>
-        <p>ご相談内容を受け付けました。<br/>3営業日以内にご連絡いたします。</p>
+        <p>ご相談内容を受け付けました。</p>
+        <div class="booking-box">
+          <p>次のステップとして、<strong style="color:#fff;">30分の無料面談</strong>のご予約をお願いします。<br/>下のボタンから空き日時をお選びください。</p>
+          <a href="https://timerex.net/s/kagi_ceb7/7982ebba/" target="_blank" class="btn-booking">30分 無料面談を予約する →</a>
+          <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,.4);">※ ご都合が合わない場合はご連絡をお待ちください。</p>
+        </div>
       </div>
     </div>
   </div>
