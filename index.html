@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鍵谷 健 コンサルティング | 経営の突破口を、共に見つける</title>
+  <meta name="description" content="累計売上600億円超の現役経営者が、あなたの経営課題を直接サポート。中小企業・成長企業の経営者専用コンサルティング。" />
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8cc7a;
+      --dark: #0d0d0d;
+      --dark2: #1a1a1a;
+      --dark3: #242424;
+      --text: #f0ece4;
+      --text-muted: #a09882;
+      --accent: #c9a84c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'Georgia', serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ─── STICKY CTA ─── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1510 100%);
+      border-top: 1px solid var(--gold);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 -4px 30px rgba(201,168,76,0.15);
+    }
+    .sticky-cta p {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+    .sticky-cta p strong { color: var(--gold); }
+    .btn-apply {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%);
+      color: #0d0d0d;
+      font-weight: 800;
+      font-family: 'Hiragino Sans', sans-serif;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      white-space: nowrap;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-apply:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(201,168,76,0.4);
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+    .header-btn {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Hiragino Sans', sans-serif;
+      font-size: 13px;
+      padding: 8px 20px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .header-btn:hover { background: var(--gold); color: #0d0d0d; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 100px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.04) 0%, transparent 50%),
+                  var(--dark);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      padding: 6px 18px;
+      margin-bottom: 36px;
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 54px);
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p.lead {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+    .hero-numbers {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+    }
+    .hero-num {
+      text-align: center;
+    }
+    .hero-num .val {
+      display: block;
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-num .label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'Hiragino Sans', sans-serif;
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .btn-hero {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%);
+      color: #0d0d0d;
+      font-weight: 800;
+      font-family: 'Hiragino Sans', sans-serif;
+      font-size: 17px;
+      padding: 20px 52px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: all 0.25s;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.3);
+    }
+    .btn-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(201,168,76,0.45);
+    }
+    .hero-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 100px 24px; }
+    .container { max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+    .section-title {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 48px;
+      color: #fff;
+    }
+    .section-title span { color: var(--gold); }
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 20px;
+    }
+
+    /* ─── STORY ─── */
+    .story-bg { background: var(--dark2); }
+    .story-text {
+      font-size: clamp(15px, 2vw, 17px);
+      line-height: 2;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+    }
+    .story-text p { margin-bottom: 24px; }
+    .story-text .highlight {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.05em;
+    }
+    .story-blockquote {
+      border-left: 3px solid var(--gold);
+      padding: 20px 28px;
+      margin: 36px 0;
+      background: rgba(201,168,76,0.05);
+      font-size: clamp(16px, 2.5vw, 20px);
+      font-style: italic;
+      color: #fff;
+    }
+
+    /* ─── RESULTS ─── */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .result-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 28px 24px;
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+    .result-card:hover { border-color: var(--gold); }
+    .result-card .industry {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      font-family: 'Hiragino Sans', sans-serif;
+      margin-bottom: 12px;
+    }
+    .result-card .outcome {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .result-card .detail {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+
+    /* ─── WHO ─── */
+    .who-bg { background: var(--dark2); }
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .who-col h3 {
+      font-size: 15px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      font-family: 'Hiragino Sans', sans-serif;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 10px;
+    }
+    .who-col.no h3 { color: #888; border-bottom-color: rgba(136,136,136,0.3); }
+    .who-list { list-style: none; }
+    .who-list li {
+      font-size: 14px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-left: 20px;
+      position: relative;
+    }
+    .who-col.yes .who-list li::before { content: '✔'; color: var(--gold); position: absolute; left: 0; font-size: 12px; top: 9px; }
+    .who-col.no .who-list li::before { content: '✕'; color: #666; position: absolute; left: 0; font-size: 12px; top: 9px; }
+
+    /* ─── SERVICE ─── */
+    .service-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.15);
+      padding: 40px 36px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+    .service-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, rgba(201,168,76,0.07) 0%, var(--dark3) 100%);
+    }
+    .service-card .tag {
+      display: inline-block;
+      background: var(--gold);
+      color: #0d0d0d;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      margin-bottom: 16px;
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+    .service-card h3 {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .service-list { list-style: none; }
+    .service-list li {
+      font-size: 14px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+      padding: 7px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+    .service-list li::before { content: '—'; color: var(--gold); position: absolute; left: 0; }
+
+    /* ─── PROFILE ─── */
+    .profile-bg { background: var(--dark2); }
+    .profile-inner {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .profile-img {
+      width: 160px;
+      height: 200px;
+      flex-shrink: 0;
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+      font-size: 48px;
+    }
+    .profile-content h3 {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .profile-content .title {
+      font-size: 13px;
+      color: var(--gold);
+      font-family: 'Hiragino Sans', sans-serif;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .profile-content p {
+      font-size: 14px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .career-list { list-style: none; margin-top: 12px; }
+    .career-list li {
+      font-size: 13px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: var(--text-muted);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-left: 16px;
+      position: relative;
+    }
+    .career-list li::before { content: '▸'; color: var(--gold); position: absolute; left: 0; font-size: 10px; top: 8px; }
+
+    /* ─── FAQ ─── */
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0;
+    }
+    .faq-q {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .faq-q::before {
+      content: 'Q';
+      color: var(--gold);
+      font-size: 14px;
+      font-family: 'Hiragino Sans', sans-serif;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .faq-a {
+      font-size: 14px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+      line-height: 1.9;
+      padding-left: 26px;
+    }
+    .faq-a::before {
+      content: 'A  ';
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    /* ─── FORM SECTION ─── */
+    .form-section {
+      background: linear-gradient(135deg, var(--dark2) 0%, rgba(201,168,76,0.05) 100%);
+    }
+    .form-section .container { max-width: 700px; }
+    .form-wrap {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 6px;
+      padding: 48px 44px;
+    }
+    .form-group { margin-bottom: 24px; }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .form-group label .req {
+      color: var(--gold);
+      margin-left: 4px;
+      font-size: 10px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text);
+      font-family: 'Hiragino Sans', sans-serif;
+      font-size: 15px;
+      padding: 14px 16px;
+      border-radius: 3px;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.04);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: #1a1a1a; }
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .form-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .form-check label {
+      font-size: 13px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+      cursor: pointer;
+      line-height: 1.6;
+    }
+    .privacy-box {
+      background: rgba(201,168,76,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 3px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+    .privacy-box p {
+      font-size: 12px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .privacy-box p:last-child { margin-bottom: 0; }
+    .privacy-box strong { color: var(--gold-light); }
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold) 0%, #a07830 100%);
+      color: #0d0d0d;
+      font-weight: 800;
+      font-family: 'Hiragino Sans', sans-serif;
+      font-size: 17px;
+      padding: 20px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      transition: all 0.25s;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.3);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(201,168,76,0.45);
+    }
+    .form-sub {
+      text-align: center;
+      font-size: 12px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+
+    /* ─── SUCCESS MESSAGE ─── */
+    #success-msg {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    #success-msg h3 {
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    #success-msg p {
+      font-size: 15px;
+      font-family: 'Hiragino Sans', sans-serif;
+      color: #d4cfc8;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080808;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'Hiragino Sans', sans-serif;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      header { padding: 14px 20px; }
+      .logo { font-size: 13px; }
+      section { padding: 72px 20px; }
+      .who-grid { grid-template-columns: 1fr; }
+      .profile-inner { flex-direction: column; }
+      .profile-img { width: 100%; height: 140px; }
+      .form-wrap { padding: 32px 24px; }
+      .sticky-cta p { display: none; }
+      .sticky-cta { justify-content: center; }
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── STICKY BOTTOM CTA ─── -->
+<div class="sticky-cta">
+  <p><strong>現在、新規受付中</strong>　|　まず30分の無料ヒアリングから</p>
+  <a href="#form" class="btn-apply">無料相談に申し込む →</a>
+</div>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="logo">鍵谷 健 コンサルティング</div>
+  <a href="#form" class="header-btn">無料相談を申し込む</a>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-label">現役経営者による実践型 経営コンサルティング</div>
+  <h1>
+    売上でも、組織でも、<br />
+    「なぜかうまくいかない」には<br />
+    <span>必ず、突破口がある。</span>
+  </h1>
+  <p class="lead">
+    手元資金2万円・周囲107人に反対されながら起業し、<br />
+    20年で累計売上600億円超を実現した経営者が、<br />
+    あなたの経営課題に直接向き合います。
+  </p>
+  <div class="hero-numbers">
+    <div class="hero-num">
+      <span class="val">600億+</span>
+      <span class="label">累計売上実績</span>
+    </div>
+    <div class="hero-num">
+      <span class="val">20年+</span>
+      <span class="label">経営者歴</span>
+    </div>
+    <div class="hero-num">
+      <span class="val">150名</span>
+      <span class="label">最大組織規模</span>
+    </div>
+  </div>
+  <div class="hero-cta-wrap">
+    <a href="#form" class="btn-hero">無料ヒアリングに申し込む（30分）</a>
+    <span class="hero-note">まずはご相談内容をお聞かせください。費用のご案内はその後です。</span>
+  </div>
+</section>
+
+<!-- ─── STORY ─── -->
+<section class="story-bg">
+  <div class="container">
+    <p class="section-label fade-in">STORY</p>
+    <h2 class="section-title fade-in">
+      手元2万円・107人に反対された男が、<br /><span>なぜ600億を動かせたのか。</span>
+    </h2>
+    <div class="story-text fade-in">
+      <p>
+        スポーツ用品の営業マンとして働きながら、夜はテニスコーチとして副業していた1990年代。「起業したい」と相談した
+        <span class="highlight">108人の経営者のうち、107人に反対されました。</span>
+      </p>
+      <p>
+        それでも手元の<span class="highlight">2万円</span>を握りしめ、ソフトテニスの指導者インタビューをカセットテープで販売するビジネスを始めました。最初の6ヶ月間は、1本も売れませんでした。
+      </p>
+      <div class="story-blockquote">
+        「失敗しても2万円の話です。やらずに後悔するより、やって学んだ方がいい。」
+      </div>
+      <p>
+        その後、DVD教材・歯科や接骨院向けセミナー・プロテインブランド（ビーレジェンド）・テニススクール・D2C通販・トレーニングジム・通信教育事業と、次々に事業を展開。スタッフ0人から<span class="highlight">最大150名の組織</span>を率いるまでになりました。
+      </p>
+      <p>
+        そして今、これまでの失敗と成功すべてを詰め込んだ知見を、次の世代の経営者に還元したいと思っています。コンサルタントとしての私は「教える（ティーチング）」と「引き出す（コーチング）」を融合させた伴走スタイルで、あなたの経営の突破口を一緒に見つけます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESULTS ─── -->
+<section>
+  <div class="container">
+    <p class="section-label fade-in" style="text-align:center">RESULTS</p>
+    <div class="divider fade-in"></div>
+    <h2 class="section-title fade-in" style="text-align:center">
+      数字が、証明する。
+    </h2>
+    <div class="results-grid fade-in">
+      <div class="result-card">
+        <p class="industry">医療・看護師（副業スタート）</p>
+        <p class="outcome">3ヶ月で<br />月収100万円超</p>
+        <p class="detail">副業ゼロから、戦略的に単価と集客を設計。わずか3ヶ月で本業超えを達成。</p>
+      </div>
+      <div class="result-card">
+        <p class="industry">歯科医院（新規開院）</p>
+        <p class="outcome">開院3ヶ月で黒字化<br />客単価10倍</p>
+        <p class="detail">差別化戦略と価格設計を見直し、開院直後から収益化に成功。</p>
+      </div>
+      <div class="result-card">
+        <p class="industry">製造業（採用・組織）</p>
+        <p class="outcome">離職率90%→<br />30名応募・15名採用</p>
+        <p class="detail">理念と組織文化の再構築により、採用ブランドを根本から変革。</p>
+      </div>
+      <div class="result-card">
+        <p class="industry">EC・楽天ショップ</p>
+        <p class="outcome">月商<br />185%アップ</p>
+        <p class="detail">商品設計・ページ訴求・集客の三点を見直し、売上を約2倍に。</p>
+      </div>
+      <div class="result-card">
+        <p class="industry">物流・ドライバー（副業）</p>
+        <p class="outcome">月収<br />100万円超を達成</p>
+        <p class="detail">スキルの棚卸しと情報発信設計により、本業外での収入を確立。</p>
+      </div>
+      <div class="result-card" style="background:rgba(201,168,76,0.05); border-color:rgba(201,168,76,0.3); display:flex; align-items:center; justify-content:center; text-align:center;">
+        <div>
+          <p style="font-size:32px; margin-bottom:8px;">📋</p>
+          <p class="detail" style="color:var(--gold)">あなたの事例が、ここに加わるかもしれません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO ─── -->
+<section class="who-bg">
+  <div class="container">
+    <p class="section-label fade-in" style="text-align:center">FOR WHOM</p>
+    <div class="divider fade-in"></div>
+    <h2 class="section-title fade-in" style="text-align:center">
+      こんな経営者と、<span>一緒に動きたい。</span>
+    </h2>
+    <div class="who-grid fade-in">
+      <div class="who-col yes">
+        <h3>このような方に向いています</h3>
+        <ul class="who-list">
+          <li>売上・組織の課題を本気で解決したい</li>
+          <li>自ら動き、変化を恐れない</li>
+          <li>中長期で事業を強くしたい</li>
+          <li>IPO・売上10倍・組織拡大を視野に</li>
+          <li>人材育成・採用に課題がある</li>
+          <li>新規事業・次の柱を探している</li>
+          <li>理念経営で会社の土台を固めたい</li>
+        </ul>
+      </div>
+      <div class="who-col no">
+        <h3>ミスマッチになりやすい方</h3>
+        <ul class="who-list">
+          <li>「任せたのだからあとはよろしく」</li>
+          <li>すぐ答えだけほしい・考えたくない</li>
+          <li>現状維持が最優先</li>
+          <li>月1回の面談だけで変えたい</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICE ─── -->
+<section>
+  <div class="container">
+    <p class="section-label fade-in">SERVICE</p>
+    <h2 class="section-title fade-in">提供できること</h2>
+    <div class="service-card featured fade-in">
+      <span class="tag">MAIN SERVICE</span>
+      <h3>経営伴走コンサルティング</h3>
+      <ul class="service-list">
+        <li>定期セッション（月2〜4回、Zoom or 対面）</li>
+        <li>Slack等を通じた日常的な相談対応（迅速返答）</li>
+        <li>経営課題の言語化・優先順位整理</li>
+        <li>売上・利益・組織・採用・マーケティングを横断的にカバー</li>
+        <li>月次レビュー＆次の打ち手提案</li>
+        <li>必要に応じた幹部・社員向けセッション対応</li>
+      </ul>
+    </div>
+    <div class="service-card fade-in">
+      <span class="tag" style="background:var(--dark); color:var(--gold); border:1px solid var(--gold)">COVERAGE AREA</span>
+      <h3>対応できる領域</h3>
+      <ul class="service-list">
+        <li>売上・収益改善／価格戦略</li>
+        <li>組織づくり・マネジメント・採用</li>
+        <li>マーケティング・集客・D2C通販</li>
+        <li>新規事業開発・多角化</li>
+        <li>理念経営・企業文化の構築</li>
+        <li>M&amp;A・EXIT戦略の壁打ち</li>
+        <li>資金調達・補助金活用（連携対応）</li>
+      </ul>
+    </div>
+    <div class="service-card fade-in">
+      <span class="tag" style="background:var(--dark); color:var(--gold); border:1px solid var(--gold)">FLOW</span>
+      <h3>開始までの流れ</h3>
+      <ul class="service-list">
+        <li>① このフォームから相談内容をご入力</li>
+        <li>② 内容確認後、初回30分ヒアリング（無料）を設定</li>
+        <li>③ ヒアリング後に秘密保持契約（NDA）を締結</li>
+        <li>④ サービス内容・条件をご提示・合意</li>
+        <li>⑤ 決算書等の資料をご共有いただき、本格開始</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROFILE ─── -->
+<section class="profile-bg">
+  <div class="container">
+    <p class="section-label fade-in">PROFILE</p>
+    <div class="profile-inner fade-in">
+      <div class="profile-img">👤</div>
+      <div class="profile-content">
+        <h3>鍵谷 健</h3>
+        <p class="title">株式会社Real Style 代表取締役 / 経営コンサルタント</p>
+        <p>
+          1973年、奈良県生まれ。テニスショップ勤務後、スポーツ用品の営業と夜間のテニスコーチを掛け持ちしながら起業を決意。108人の経営者に相談し107人に反対されたが、手元2万円で創業。
+        </p>
+        <p>
+          ソフトテニス教材から始まり、DVD制作・歯科/接骨院向けセミナー・プロテインブランド（ビーレジェンド）・D2C通販・トレーニングジム・通信教育など、20年以上にわたり複数事業を展開。累計売上600億円超、組織最大150名を経験。
+        </p>
+        <p>
+          「命を授かった以上、世の中の役に立ちたい」という想いから、これまでの経験と知見を次世代の経営者に還元するコンサルティング事業を展開中。
+        </p>
+        <ul class="career-list">
+          <li>テニスショップ勤務・スポーツ用品営業・テニスコーチ（兼業）</li>
+          <li>手元2万円で創業 → スポーツ教材（カセットテープ/DVD）販売</li>
+          <li>歯科・接骨院向け教材・セミナー事業展開</li>
+          <li>プロテインブランド「ビーレジェンド」を開発・販売</li>
+          <li>D2C通販・トレーニングジム・通信教育へ多角化</li>
+          <li>スタッフ0→最大150名の組織運営を経験</li>
+          <li>累計売上600億円超を達成</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section>
+  <div class="container">
+    <p class="section-label fade-in" style="text-align:center">FAQ</p>
+    <div class="divider fade-in"></div>
+    <h2 class="section-title fade-in" style="text-align:center">よくある質問</h2>
+    <div class="fade-in">
+      <div class="faq-item">
+        <p class="faq-q">どのような企業・業種が対象ですか？</p>
+        <p class="faq-a">業種は問いません。これまでスポーツ・医療・製造・EC・物流・教育・サービス業など多様な業種の方を支援してきました。規模感は中小企業・個人事業主〜売上数十億円規模の企業まで対応しています。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">秘密保持（NDA）はどうなりますか？</p>
+        <p class="faq-a">初回ヒアリング後、正式なご支援開始の前に秘密保持契約（NDA）を締結します。フォームにご記入いただいた情報、およびその後にご提供いただく決算書等の財務情報は、コンサルティング業務の目的のみに使用し、第三者への開示は一切行いません。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">費用はいくらですか？</p>
+        <p class="faq-a">お客様の状況・課題・サポート内容によって異なります。まずは初回の無料ヒアリング（30分）で課題をお聞きしたうえで、最適なプランと費用をご提案します。フォーム送信の段階では費用は発生しません。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">決算書を見せることへの不安があります。</p>
+        <p class="faq-a">ご安心ください。決算書等の財務情報は、NDA締結後にご提供いただきます。いただいた情報は外部に開示・漏洩することは一切ありません。20年以上の経営者としての信頼と実績を背景に、厳重に管理します。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">オンラインのみでも対応できますか？</p>
+        <p class="faq-a">はい、Zoom等のオンラインで完結できます。必要に応じて現場同行や対面セッションにも対応しています（エリア・条件は要相談）。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">申し込みからどのくらいで始まりますか？</p>
+        <p class="faq-a">フォーム送信後、3営業日以内にご連絡します。初回ヒアリングを経てNDA締結・プラン合意となり、通常2〜3週間以内に本格スタートできます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FORM ─── -->
+<section class="form-section" id="form">
+  <div class="container">
+    <p class="section-label fade-in" style="text-align:center">CONTACT</p>
+    <div class="divider fade-in"></div>
+    <h2 class="section-title fade-in" style="text-align:center">
+      まず、あなたの話を<span>聞かせてください。</span>
+    </h2>
+    <p class="fade-in" style="text-align:center; font-size:14px; font-family:'Hiragino Sans',sans-serif; color:var(--text-muted); margin-bottom:40px; margin-top:-24px;">
+      フォーム送信後、3営業日以内にご連絡します。<br />初回30分のヒアリングは無料です。
+    </p>
+    <div class="form-wrap fade-in">
+      <div id="form-container">
+        <form id="inquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+          <div class="form-group">
+            <label>お名前（フルネーム）<span class="req">必須</span></label>
+            <input type="text" name="name" placeholder="鍵谷 健" required />
+          </div>
+
+          <div class="form-group">
+            <label>会社名 / 屋号<span class="req">必須</span></label>
+            <input type="text" name="company" placeholder="株式会社○○" required />
+          </div>
+
+          <div class="form-group">
+            <label>会社・サービスのURL</label>
+            <input type="url" name="url" placeholder="https://example.com" />
+          </div>
+
+          <div class="form-group">
+            <label>メールアドレス<span class="req">必須</span></label>
+            <input type="email" name="email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label>業種・事業内容<span class="req">必須</span></label>
+            <input type="text" name="industry" placeholder="例：EC通販（健康食品）、製造業、サービス業 など" required />
+          </div>
+
+          <div class="form-group">
+            <label>直近の年商規模<span class="req">必須</span></label>
+            <select name="revenue" required>
+              <option value="" disabled selected>選択してください</option>
+              <option>1,000万円未満</option>
+              <option>1,000万円〜3,000万円未満</option>
+              <option>3,000万円〜1億円未満</option>
+              <option>1億円〜3億円未満</option>
+              <option>3億円以上</option>
+              <option>回答を控えます</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>現在、最も困っていること・課題<span class="req">必須</span></label>
+            <textarea name="problem" rows="5" placeholder="「売上が伸び悩んでいる」「組織がバラバラ」「次の一手がわからない」など、どんな些細なことでも構いません。" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>コンサルティングで得たい結果・理想の状態<span class="req">必須</span></label>
+            <textarea name="goal" rows="4" placeholder="3〜6ヶ月後、どのような状態になっていたいですか？数字や具体的なイメージがあればお書きください。" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>これまでに試みた施策・取り組み</label>
+            <textarea name="history" rows="3" placeholder="すでに試したことや、うまくいかなかったことがあればお聞かせください。"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>今回のご相談のきっかけ</label>
+            <select name="source">
+              <option value="" disabled selected>選択してください</option>
+              <option>note</option>
+              <option>X（旧Twitter）</option>
+              <option>Instagram</option>
+              <option>知人・紹介</option>
+              <option>その他</option>
+            </select>
+          </div>
+
+          <div class="privacy-box">
+            <p><strong>【情報の取り扱いについて】</strong></p>
+            <p>ご入力いただいた情報は、コンサルティング検討・業務遂行の目的のみに使用します。第三者への開示・提供は一切行いません。</p>
+            <p>後日ご提供いただく決算書等の財務情報についても同様に厳重に管理し、外部に漏洩することは一切ありません。正式なご契約前に秘密保持契約（NDA）を締結します。</p>
+          </div>
+
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" id="chk1" name="agree1" required />
+              <label for="chk1">上記の情報取り扱い方針に同意します</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="chk2" name="agree2" required />
+              <label for="chk2">正式契約前にNDAを締結することを了承します</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            無料ヒアリングに申し込む →
+          </button>
+          <p class="form-sub">送信後、3営業日以内にご連絡いたします。</p>
+        </form>
+      </div>
+      <div id="success-msg">
+        <h3>ありがとうございます</h3>
+        <p>ご相談内容を受け付けました。<br />3営業日以内にご連絡いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© 2026 鍵谷 健 / 株式会社Real Style　|　All Rights Reserved.</p>
+</footer>
+
+<!-- ─── SCRIPTS ─── -->
+<script>
+  // Formspree AJAX submit
+  const form = document.getElementById('inquiry-form');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = '送信中...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        btn.textContent = '送信に失敗しました。再度お試しください。';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'エラーが発生しました。再度お試しください。';
+      btn.disabled = false;
+    }
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
