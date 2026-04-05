@@ -933,12 +933,18 @@
         document.getElementById('form-container').style.display = 'none';
         document.getElementById('success-msg').style.display = 'block';
       } else {
+        const data = await res.json().catch(() => ({}));
+        const errs = data.errors ? data.errors.map(e => e.message).join(', ') : JSON.stringify(data);
         btn.textContent = '送信に失敗しました。再度お試しください。';
+        btn.style.fontSize = '13px';
         btn.disabled = false;
+        console.error('Formspree error', res.status, errs);
+        alert('エラー詳細 (開発者向け): ' + res.status + ' - ' + errs);
       }
-    } catch {
+    } catch(err) {
       btn.textContent = 'エラーが発生しました。再度お試しください。';
       btn.disabled = false;
+      console.error('Fetch error', err);
     }
   });
 
