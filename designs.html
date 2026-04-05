@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>デザイン案 5選</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Hiragino Sans', sans-serif; background: #111; }
+
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: #000; border-bottom: 1px solid #333;
+  display: flex; overflow-x: auto;
+}
+.nav button {
+  padding: 14px 26px; color: #666; background: none;
+  border: none; border-right: 1px solid #222;
+  font-size: 13px; white-space: nowrap; cursor: pointer;
+  font-family: 'Hiragino Sans', sans-serif;
+  transition: all .15s;
+}
+.nav button:hover { color: #ccc; background: #1a1a1a; }
+.nav button.active { background: #222; color: #fff; border-bottom: 2px solid #c9a84c; }
+.nav button small { display: block; font-size: 10px; color: #555; margin-top: 2px; }
+.nav button.active small { color: #999; }
+
+.design { display: none; padding-top: 54px; }
+.design.active { display: block; }
+
+/* ═══ 共通 ═══ */
+.hero { min-height: calc(100vh - 54px); display: flex; flex-direction: column; justify-content: center; padding: 60px; position: relative; overflow: hidden; }
+.hero-row { min-height: calc(100vh - 54px); display: flex; position: relative; overflow: hidden; }
+
+/* ─── 案① 紺×アンバー ─── */
+.d1 { background: linear-gradient(160deg,#0b1526 0%,#0f1f38 55%,#0d1a30 100%); }
+.d1 .glow { position:absolute;right:-100px;top:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(210,140,40,.1) 0%,transparent 70%);pointer-events:none; }
+.d1-badge { display:inline-flex;align-items:center;background:rgba(210,140,40,.1);border:1px solid rgba(210,140,40,.35);padding:8px 18px;border-radius:40px;margin-bottom:36px;width:fit-content; }
+.d1-badge span { font-size:12px;color:#d28c28;letter-spacing:.15em; }
+.d1-face { width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#2a3a5c,#1a2a45);border:2px solid rgba(210,140,40,.4);display:flex;align-items:center;justify-content:center;font-size:28px;float:right;margin:0 0 20px 40px; }
+.d1 h1 { font-size:40px;font-weight:700;line-height:1.35;color:#fff;margin-bottom:20px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif; }
+.d1 h1 em { color:#d28c28;font-style:normal; }
+.d1 p { color:#8fa8cc;font-size:16px;line-height:1.9;margin-bottom:40px;max-width:520px; }
+.d1-stats { display:flex;gap:48px;margin-bottom:44px; }
+.d1-stat .n { font-size:38px;font-weight:800;color:#d28c28;line-height:1; }
+.d1-stat .l { font-size:12px;color:#6888aa;margin-top:4px;letter-spacing:.1em; }
+.d1-btn { display:inline-block;padding:18px 44px;background:linear-gradient(135deg,#d28c28,#a06010);color:#fff;font-size:16px;font-weight:700;border-radius:6px;letter-spacing:.05em;box-shadow:0 8px 32px rgba(210,140,40,.3); }
+.d1-sub { font-size:12px;color:#4a6080;margin-top:12px; }
+
+/* ─── 案② 生成り×テラコッタ ─── */
+.d2 { background:#f5f0e8; }
+.d2 .bg-pattern { position:absolute;inset:0;opacity:.5;background-image:repeating-linear-gradient(45deg,rgba(184,92,56,.03) 0,rgba(184,92,56,.03) 1px,transparent 0,transparent 50%);background-size:20px 20px;pointer-events:none; }
+.d2-tag { display:inline-block;background:#b85c38;color:#fff;font-size:11px;letter-spacing:.2em;padding:5px 14px;margin-bottom:32px;border-radius:2px; }
+.d2 h1 { font-size:40px;font-weight:600;line-height:1.5;color:#2c1f18;margin-bottom:20px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif; }
+.d2 h1 em { color:#b85c38;font-style:normal;border-bottom:3px solid #b85c38; }
+.d2-quote { border-left:4px solid #b85c38;padding:16px 20px;background:rgba(184,92,56,.07);margin:24px 0;border-radius:0 4px 4px 0;font-size:15px;color:#4a2f22;line-height:1.9;font-family:'Hiragino Mincho ProN',serif; }
+.d2-stats { display:flex;gap:40px;margin:28px 0; }
+.d2-stat .n { font-size:34px;font-weight:800;color:#b85c38;line-height:1; }
+.d2-stat .l { font-size:12px;color:#8a6050;margin-top:4px; }
+.d2-btn { display:inline-block;padding:18px 44px;background:#2c1f18;color:#f5f0e8;font-size:16px;font-weight:700;border-radius:4px; }
+.d2-note { font-size:12px;color:#9a7060;margin-top:12px; }
+
+/* ─── 案③ 白×ネイビー ─── */
+.d3 { background:#fff;flex-direction:row;align-items:stretch; }
+.d3-left { flex:1;padding:80px 60px;display:flex;flex-direction:column;justify-content:center; }
+.d3-right { width:360px;flex-shrink:0;background:linear-gradient(160deg,#1a2744 0%,#0d1628 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;gap:24px; }
+.d3-tag { font-size:11px;letter-spacing:.25em;color:#1a2744;border-bottom:2px solid #1a2744;padding-bottom:6px;display:inline-block;margin-bottom:28px; }
+.d3 h1 { font-size:46px;font-weight:900;line-height:1.15;color:#0d1628;margin-bottom:24px;font-family:'Hiragino Sans';letter-spacing:-.02em; }
+.d3 h1 span { display:block;font-size:30px;font-weight:500;color:#3a5080;margin-top:8px; }
+.d3 p { color:#5a6a80;font-size:15px;line-height:1.9;margin-bottom:40px;max-width:400px; }
+.d3-btn { display:inline-block;padding:18px 44px;background:#1a2744;color:#fff;font-size:16px;font-weight:700;border-radius:4px; }
+.d3-card { background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:24px 28px;width:100%;text-align:center; }
+.d3-card .n { font-size:40px;font-weight:900;color:#fff;line-height:1; }
+.d3-card .n span { font-size:18px;font-weight:400; }
+.d3-card .l { font-size:12px;color:rgba(255,255,255,.45);margin-top:6px;letter-spacing:.1em; }
+
+/* ─── 案④ クリーム×茶 ─── */
+.d4 { background:#fdf8f3; }
+.d4 .watermark { position:absolute;right:40px;bottom:30px;font-size:100px;font-weight:900;color:rgba(61,43,31,.04);font-family:'Hiragino Sans';white-space:nowrap;pointer-events:none;line-height:1;user-select:none; }
+.d4-kicker { font-size:13px;letter-spacing:.2em;color:#8a6a50;margin-bottom:32px; }
+.d4 h1 { font-size:38px;font-weight:600;line-height:1.5;color:#2c1a0e;margin-bottom:28px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;max-width:640px; }
+.d4 h1 em { font-style:normal;font-weight:700;border-bottom:3px solid #b85c38;padding-bottom:2px; }
+.d4-story { font-size:17px;color:#4a3020;line-height:2.1;max-width:600px;margin-bottom:44px;font-family:'Hiragino Mincho ProN','Yu Mincho',serif; }
+.d4-story strong { color:#b85c38; }
+.d4-stats { display:flex;border:1px solid rgba(61,43,31,.12);border-radius:4px;overflow:hidden;width:fit-content;margin-bottom:44px; }
+.d4-stat { padding:18px 36px;border-right:1px solid rgba(61,43,31,.12);text-align:center; }
+.d4-stat:last-child { border-right:none; }
+.d4-stat .n { font-size:30px;font-weight:800;color:#3d2b1f;line-height:1; }
+.d4-stat .l { font-size:11px;color:#8a7060;margin-top:4px; }
+.d4-btn { display:inline-block;padding:18px 44px;background:#3d2b1f;color:#fdf8f3;font-size:16px;font-weight:600;border-radius:4px;letter-spacing:.05em;font-family:'Hiragino Mincho ProN',serif; }
+
+/* ─── 案⑤ 白×チャコール×レッド ─── */
+.d5 { background:#f4f4f4;padding-left:80px; }
+.d5-bar { position:absolute;left:0;top:0;bottom:0;width:8px;background:linear-gradient(180deg,#e83c3c 0%,#c01010 100%); }
+.d5-label { font-size:12px;letter-spacing:.3em;color:#c01010;font-weight:700;margin-bottom:24px; }
+.d5 h1 { font-size:52px;font-weight:900;line-height:1.15;color:#111;margin-bottom:20px;font-family:'Hiragino Sans';letter-spacing:-.03em; }
+.d5 h1 span { color:#c01010; }
+.d5 p { color:#555;font-size:17px;line-height:1.7;max-width:540px;margin-bottom:40px; }
+.d5-grid { display:flex;width:fit-content;margin-bottom:44px; }
+.d5-cell { padding:20px 40px;background:#111;color:#fff;text-align:center;border-right:1px solid #333; }
+.d5-cell:last-child { border-right:none; }
+.d5-cell .n { font-size:36px;font-weight:900;color:#fff;line-height:1; }
+.d5-cell .n span { font-size:18px;font-weight:400; }
+.d5-cell .l { font-size:11px;color:#888;margin-top:4px;letter-spacing:.1em; }
+.d5-btn { display:inline-block;padding:20px 52px;background:#c01010;color:#fff;font-size:17px;font-weight:900;border-radius:3px;letter-spacing:.05em;box-shadow:0 6px 24px rgba(192,16,16,.3); }
+.d5-sub { font-size:12px;color:#888;margin-top:12px; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <button class="active" onclick="show(1,this)"><small>案①</small>紺×アンバー</button>
+  <button onclick="show(2,this)"><small>案②</small>生成り×テラコッタ</button>
+  <button onclick="show(3,this)"><small>案③</small>白×ネイビー</button>
+  <button onclick="show(4,this)"><small>案④</small>クリーム×茶</button>
+  <button onclick="show(5,this)"><small>案⑤</small>白×レッド</button>
+</div>
+
+<!-- ① -->
+<div class="design active" id="design1">
+  <div class="hero d1">
+    <div class="glow"></div>
+    <div class="d1-face">👤</div>
+    <div class="d1-badge"><span>現役経営者による伴走コンサルティング</span></div>
+    <h1>売上でも組織でも、<br/>「なぜかうまくいかない」には<br/><em>必ず、突破口がある。</em></h1>
+    <p>手元2万円・107人に反対されながら起業し、20年で累計売上524億円。<br/>現役経営者が、あなたの経営課題に直接向き合います。</p>
+    <div class="d1-stats">
+      <div class="d1-stat"><div class="n">524億</div><div class="l">累計売上実績</div></div>
+      <div class="d1-stat"><div class="n">20年+</div><div class="l">経営者歴</div></div>
+      <div class="d1-stat"><div class="n">130名超</div><div class="l">最大組織規模</div></div>
+    </div>
+    <a href="#" class="d1-btn">無料ヒアリングに申し込む（30分）</a>
+    <p class="d1-sub">費用のご案内は初回ヒアリング後です</p>
+  </div>
+</div>
+
+<!-- ② -->
+<div class="design" id="design2">
+  <div class="hero d2">
+    <div class="bg-pattern"></div>
+    <div class="d2-tag">CONSULTING</div>
+    <h1>経営の悩みを、<br/>一人で抱えない。<br/><em>20年の現場から、共に考える。</em></h1>
+    <div class="d2-quote">「手元2万円で起業し、107人に反対されながらも前に進んできた。<br/>その経験すべてを、あなたに渡したい。」</div>
+    <div class="d2-stats">
+      <div class="d2-stat"><div class="n">524億</div><div class="l">累計売上実績</div></div>
+      <div class="d2-stat"><div class="n">20年+</div><div class="l">経営者歴</div></div>
+      <div class="d2-stat"><div class="n">130名超</div><div class="l">最大組織規模</div></div>
+    </div>
+    <a href="#" class="d2-btn">無料ヒアリングに申し込む（30分）</a>
+    <p class="d2-note">費用のご案内は初回ヒアリング後です</p>
+  </div>
+</div>
+
+<!-- ③ -->
+<div class="design" id="design3">
+  <div class="hero-row d3">
+    <div class="d3-left">
+      <div class="d3-tag">CONSULTING FOR CEO</div>
+      <h1>経営の<br/>突破口を、<span>共に見つける。</span></h1>
+      <p>累計売上524億円の現役経営者が、売上・組織・採用・新規事業のすべてに横断的に向き合います。</p>
+      <a href="#" class="d3-btn">無料相談を申し込む →</a>
+    </div>
+    <div class="d3-right">
+      <div class="d3-card"><div class="n">524億</div><div class="l">累計売上実績</div></div>
+      <div class="d3-card"><div class="n">20<span>年+</span></div><div class="l">経営者歴</div></div>
+      <div class="d3-card"><div class="n">130<span>名超</span></div><div class="l">最大組織規模</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ -->
+<div class="design" id="design4">
+  <div class="hero d4">
+    <div class="watermark">鍵谷 健</div>
+    <div class="d4-kicker">── 現役経営者による伴走コンサルティング ──</div>
+    <h1>手元<em>2万円</em>で始めた男が、<br/>20年かけて学んだこと全部を<br/>あなたの経営に使ってください。</h1>
+    <div class="d4-story">108人の経営者に相談し、<strong>107人に反対されました</strong>。<br/>それでも動いた結果が、今のすべてです。</div>
+    <div class="d4-stats">
+      <div class="d4-stat"><div class="n">524億</div><div class="l">累計売上</div></div>
+      <div class="d4-stat"><div class="n">20年+</div><div class="l">経営者歴</div></div>
+      <div class="d4-stat"><div class="n">130名超</div><div class="l">最大組織</div></div>
+    </div>
+    <a href="#" class="d4-btn">まず話を聞かせてください（30分・無料）</a>
+  </div>
+</div>
+
+<!-- ⑤ -->
+<div class="design" id="design5">
+  <div class="hero d5">
+    <div class="d5-bar"></div>
+    <div class="d5-label">CONSULTING</div>
+    <h1>売上が伸びないのは、<br/><span>戦略の問題</span>だ。</h1>
+    <p>20年・524億円の現役経営者が、あなたの経営の「なぜうまくいかないのか」を直接診断します。</p>
+    <div class="d5-grid">
+      <div class="d5-cell"><div class="n">524億</div><div class="l">累計売上</div></div>
+      <div class="d5-cell"><div class="n">20<span>年+</span></div><div class="l">経営者歴</div></div>
+      <div class="d5-cell"><div class="n">130<span>名超</span></div><div class="l">最大組織</div></div>
+    </div>
+    <a href="#" class="d5-btn">無料ヒアリングに申し込む →</a>
+    <p class="d5-sub">まず30分。費用のご案内はその後です。</p>
+  </div>
+</div>
+
+<script>
+function show(n, btn) {
+  document.querySelectorAll('.design').forEach(d => d.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('design' + n).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
