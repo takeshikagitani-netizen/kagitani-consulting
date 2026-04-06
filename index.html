@@ -245,25 +245,41 @@
     .who-col.no  .who-list li::before { content: '✗'; color: rgba(255,100,100,.7); position: absolute; left: 0; top: 10px; font-size:12px; }
 
     /* ─── SERVICE ─── */
+    .svc-section { background: var(--light); }
+    .svc-section .section-label { color: #3a6baa; }
+    .svc-section .section-title { color: var(--dark-text); }
+    .svc-section .divider { background: #4a7aaa; }
     .svc-card {
-      background: var(--navy2); border: 1px solid var(--line);
-      border-radius: 6px; padding: 40px 36px; margin-bottom: 20px;
+      border-radius: 8px; padding: 40px 36px; margin-bottom: 20px;
     }
-    .svc-card.featured { border-color: rgba(240,160,48,.3); background: linear-gradient(135deg, rgba(201,151,61,.06) 0%, var(--navy2) 100%); }
+    .svc-card.dark {
+      background: var(--navy); border: 1px solid rgba(201,151,61,.25);
+    }
+    .svc-card.dark .svc-tag { color: var(--amber); border-color: rgba(201,151,61,.4); }
+    .svc-card.dark h3 { color: #fff; }
+    .svc-card.dark .svc-list li { color: rgba(255,255,255,.75); border-bottom-color: rgba(255,255,255,.1); }
+    .svc-card.dark .svc-list li::before { background: var(--blue); }
+    .svc-card.light {
+      background: #fff; border: 1px solid rgba(17,32,80,.1);
+      box-shadow: 0 2px 16px rgba(17,32,80,.06);
+    }
+    .svc-card.light .svc-tag { color: var(--amber); border-color: rgba(201,151,61,.4); }
+    .svc-card.light h3 { color: var(--dark-text); }
+    .svc-card.light .svc-list li { color: rgba(17,32,80,.72); border-bottom-color: rgba(17,32,80,.08); }
+    .svc-card.light .svc-list li::before { background: #3a6baa; }
     .svc-tag {
       display: inline-block; font-size: 10px; letter-spacing: .2em;
-      color: var(--amber); border: 1px solid rgba(240,160,48,.35);
-      padding: 4px 12px; margin-bottom: 16px; border-radius: 2px;
+      padding: 4px 12px; margin-bottom: 16px; border-radius: 2px; border: 1px solid;
     }
-    .svc-card h3 { font-size: clamp(17px, 2.5vw, 22px); font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .svc-card h3 { font-size: clamp(17px, 2.5vw, 22px); font-weight: 700; margin-bottom: 20px; }
     .svc-list { list-style: none; }
     .svc-list li {
-      font-size: 15px; color: rgba(255,255,255,.7);
-      padding: 8px 0 8px 18px; border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      padding: 8px 0 8px 18px; border-bottom: 1px solid transparent;
       position: relative;
     }
     .svc-list li:last-child { border-bottom: none; }
-    .svc-list li::before { content: ''; position: absolute; left: 0; top: 17px; width: 8px; height: 1px; background: var(--blue); }
+    .svc-list li::before { content: ''; position: absolute; left: 0; top: 17px; width: 8px; height: 1px; }
 
     /* ─── PROFILE ─── */
     .profile { background: var(--navy2); }
@@ -804,11 +820,12 @@
 </section>
 
 <!-- SERVICE -->
-<section>
+<section class="svc-section">
   <div class="container">
     <p class="section-label fade">SERVICE</p>
+    <div class="divider fade"></div>
     <h2 class="section-title fade">提供内容</h2>
-    <div class="svc-card featured fade">
+    <div class="svc-card dark fade">
       <span class="svc-tag">MAIN SERVICE</span>
       <h3>経営伴走コンサルティング</h3>
       <ul class="svc-list">
@@ -820,7 +837,7 @@
         <li>対面の場合、交通費・宿泊費は別途。対応できない日程・エリアもあります</li>
       </ul>
     </div>
-    <div class="svc-card fade">
+    <div class="svc-card light fade">
       <span class="svc-tag">COVERAGE AREA</span>
       <h3>対応できる領域</h3>
       <ul class="svc-list">
@@ -833,7 +850,7 @@
         <li>資金調達・補助金活用（連携対応）</li>
       </ul>
     </div>
-    <div class="svc-card fade">
+    <div class="svc-card dark fade">
       <span class="svc-tag">HOW TO START</span>
       <h3>開始までの流れ</h3>
       <ul class="svc-list">
