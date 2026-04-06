@@ -204,25 +204,45 @@
     .result-card .desc { font-size: 15px; color: var(--muted); line-height: 1.85; }
 
     /* ─── WHO ─── */
-    .who { background: var(--navy2); }
-    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .who { background: var(--light); }
+    .who .section-label { color: #3a6baa; }
+    .who .section-title { color: var(--dark-text); }
+    .who .section-title em { color: var(--amber); }
+    .who .divider { background: #4a7aaa; }
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .who-col {
+      border-radius: 8px; padding: 28px 28px;
+    }
+    .who-col.yes {
+      background: #fff;
+      border: 1px solid rgba(17,32,80,.1);
+      box-shadow: 0 2px 16px rgba(17,32,80,.07);
+    }
+    .who-col.no {
+      background: var(--navy);
+      border: 1px solid rgba(255,255,255,.08);
+    }
     .who-col h3 {
-      font-size: 13px; letter-spacing: .12em; color: var(--blue);
-      border-bottom: 1px solid rgba(110,180,247,.2);
+      font-size: 13px; letter-spacing: .12em;
       padding-bottom: 12px; margin-bottom: 20px;
     }
-    .who-col.no { background: rgba(0,0,0,.25); border-radius: 6px; padding: 20px; border: 1px solid rgba(255,255,255,.08); }
-    .who-col.no h3 { color: rgba(255,255,255,.45); border-bottom-color: rgba(255,255,255,.1); }
+    .who-col.yes h3 { color: #3a6baa; border-bottom: 1px solid rgba(17,32,80,.12); }
+    .who-col.no  h3 { color: rgba(255,255,255,.45); border-bottom: 1px solid rgba(255,255,255,.1); }
     .who-list { list-style: none; }
-    .who-list li {
-      font-size: 15px; color: rgba(255,255,255,.7);
-      padding: 9px 0 9px 22px;
-      border-bottom: 1px solid var(--line);
+    .who-col.yes .who-list li {
+      font-size: 15px; color: rgba(17,32,80,.78);
+      padding: 10px 0 10px 26px;
+      border-bottom: 1px solid rgba(17,32,80,.08);
       position: relative;
     }
-    .who-col.yes .who-list li::before { content: '✓'; color: var(--blue); position: absolute; left: 0; top: 9px; font-size:12px; }
-    .who-col.no  .who-list li::before { content: '✗'; color: rgba(255,100,100,.7); position: absolute; left: 0; top: 9px; font-size:12px; }
-    .who-col.no  .who-list li { color: rgba(255,255,255,.5); border-bottom-color: rgba(255,255,255,.08); }
+    .who-col.no .who-list li {
+      font-size: 15px; color: rgba(255,255,255,.55);
+      padding: 10px 0 10px 26px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      position: relative;
+    }
+    .who-col.yes .who-list li::before { content: '✓'; color: var(--blue); position: absolute; left: 0; top: 10px; font-size:12px; font-weight:700; }
+    .who-col.no  .who-list li::before { content: '✗'; color: rgba(255,100,100,.7); position: absolute; left: 0; top: 10px; font-size:12px; }
 
     /* ─── SERVICE ─── */
     .svc-card {
