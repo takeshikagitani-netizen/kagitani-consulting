@@ -12,12 +12,15 @@
       --navy3:  #1e3370;
       --blue:   #7ec8f8;
       --blue2:  #5ab0f0;
-      --amber:  #f0a030;
-      --amber2: #ffc055;
+      --amber:  #c9973d;
+      --amber2: #d4aa52;
       --text:   #ffffff;
       --muted:  rgba(255,255,255,.72);
       --muted2: rgba(255,255,255,.45);
       --line:   rgba(255,255,255,.12);
+      --light:  #f5f7fc;
+      --dark-text: #112050;
+      --dark-muted: rgba(17,32,80,.68);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -33,7 +36,7 @@
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
       background: rgba(14,26,64,.97);
       backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(240,160,48,.25);
+      border-top: 1px solid rgba(201,151,61,.25);
       padding: 14px 40px;
       display: flex; align-items: center; justify-content: space-between;
       box-shadow: 0 -4px 40px rgba(0,0,0,.4);
@@ -50,9 +53,9 @@
       padding: 13px 32px; border-radius: 5px;
       text-decoration: none; letter-spacing: .04em;
       transition: all .2s; white-space: nowrap; border: none; cursor: pointer;
-      box-shadow: 0 4px 20px rgba(240,160,48,.4);
+      box-shadow: 0 4px 20px rgba(201,151,61,.4);
     }
-    .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(240,160,48,.55); }
+    .btn-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(201,151,61,.55); }
 
     /* ─── HEADER ─── */
     header {
@@ -109,7 +112,7 @@
     }
     .hero-stats {
       display: flex; gap: 0; margin-bottom: 52px;
-      border: 1px solid rgba(240,160,48,.25); border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(201,151,61,.25); border-radius: 8px; overflow: hidden;
       background: rgba(255,255,255,.04);
     }
     .hero-stat {
@@ -189,7 +192,7 @@
       border-radius: 6px; padding: 28px 24px;
       transition: border-color .2s;
     }
-    .result-card:hover { border-color: rgba(240,160,48,.4); }
+    .result-card:hover { border-color: rgba(201,151,61,.4); }
     .result-card .tag {
       font-size: 10px; letter-spacing: .15em; color: var(--amber);
       margin-bottom: 12px; text-transform: uppercase;
@@ -226,7 +229,7 @@
       background: var(--navy2); border: 1px solid var(--line);
       border-radius: 6px; padding: 40px 36px; margin-bottom: 20px;
     }
-    .svc-card.featured { border-color: rgba(240,160,48,.3); background: linear-gradient(135deg, rgba(240,160,48,.06) 0%, var(--navy2) 100%); }
+    .svc-card.featured { border-color: rgba(240,160,48,.3); background: linear-gradient(135deg, rgba(201,151,61,.06) 0%, var(--navy2) 100%); }
     .svc-tag {
       display: inline-block; font-size: 10px; letter-spacing: .2em;
       color: var(--amber); border: 1px solid rgba(240,160,48,.35);
@@ -328,6 +331,13 @@
       .books-grid { grid-template-columns: 1fr; }
       .book-card { flex-direction: column; }
       .book-cover { width: 80px; }
+      .belegend-inner { flex-direction: column; }
+      .belegend-brand { width: 100%; }
+      .results-grid { grid-template-columns: 1fr; }
+      .who-col.no { margin-top: 8px; }
+      .svc-card { padding: 28px 20px; }
+      .hero-stat { padding: 16px 24px; }
+      .uganda-grid { grid-template-columns: 1fr !important; }
     }
 
     /* ─── FAQ ─── */
@@ -391,9 +401,9 @@
       font-weight: 900; font-size: 17px; padding: 20px;
       border-radius: 5px; border: none; cursor: pointer;
       letter-spacing: .05em; transition: all .25s;
-      box-shadow: 0 8px 32px rgba(240,160,48,.4);
+      box-shadow: 0 8px 32px rgba(201,151,61,.4);
     }
-    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 40px rgba(240,160,48,.55); }
+    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 40px rgba(201,151,61,.55); }
     .form-sub { text-align: center; font-size: 12px; color: var(--muted2); margin-top: 12px; }
     #success-msg { display: none; text-align: center; padding: 48px 24px; }
     #success-msg h3 { font-size: 22px; color: var(--amber); margin-bottom: 16px; }
@@ -408,9 +418,9 @@
       display: inline-block; background: var(--amber); color: #fff;
       font-weight: 800; font-size: 16px; padding: 16px 40px;
       border-radius: 5px; text-decoration: none; letter-spacing: .05em;
-      box-shadow: 0 8px 24px rgba(240,160,48,.4); transition: all .2s;
+      box-shadow: 0 8px 24px rgba(201,151,61,.4); transition: all .2s;
     }
-    #success-msg .btn-booking:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(240,160,48,.55); }
+    #success-msg .btn-booking:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,151,61,.55); }
 
     /* ─── FOOTER ─── */
     footer {
@@ -418,6 +428,41 @@
       padding: 36px 32px; text-align: center;
     }
     footer p { font-size: 12px; color: var(--muted2); }
+
+    /* ─── LIGHT SECTIONS ─── */
+    .light-bg { background: var(--light); }
+    .light-bg .section-label { color: #3a6baa; }
+    .light-bg .section-title { color: var(--dark-text); }
+    .light-bg .section-title em { color: var(--amber); }
+    .light-bg .divider { background: #4a7aaa; }
+    .light-bg .story-text { color: var(--dark-muted); }
+    .light-bg .story-text .hl { color: #a8792a; font-weight: 700; }
+    .light-bg .story-quote {
+      background: rgba(17,32,80,.05); color: var(--dark-text);
+      border-left-color: var(--amber);
+    }
+    .light-bg .story-last-p {
+      border-top: 1px solid rgba(17,32,80,.12);
+      color: rgba(17,32,80,.85);
+    }
+    .light-bg .result-card {
+      background: #fff; border-color: rgba(17,32,80,.1);
+      box-shadow: 0 2px 12px rgba(17,32,80,.06);
+    }
+    .light-bg .result-card:hover { border-color: rgba(201,151,61,.4); }
+    .light-bg .result-card .val { color: var(--dark-text); }
+    .light-bg .result-card .desc { color: var(--dark-muted); }
+    .light-bg .result-card .tag { color: var(--amber); }
+    .light-bg .results-footer {
+      border-top: 1px solid rgba(17,32,80,.12);
+      color: rgba(17,32,80,.85);
+    }
+    .light-bg .results-footer strong { color: var(--amber); }
+    /* Books light */
+    .light-bg .book-card { background: #fff; border-color: rgba(17,32,80,.1); }
+    .light-bg .book-card:hover { border-color: rgba(201,151,61,.3); }
+    .light-bg .book-info h3 { color: var(--dark-text); }
+    .light-bg .book-info p { color: var(--dark-muted); }
 
     /* ─── ANIMATIONS ─── */
     .fade { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; }
@@ -529,7 +574,7 @@
 </section>
 
 <!-- STORY -->
-<section class="story">
+<section class="story light-bg">
   <div class="container">
     <p class="section-label fade">STORY</p>
     <div class="divider fade"></div>
@@ -560,7 +605,7 @@
       <p>
         また、経営と並行して社会への貢献にも取り組んできました。<span class="hl">2009年、友人たちとともにウガンダに学校を建設。</span>現地の子どもたちの教育環境づくりに関わり、「事業で稼いだお金を、世の中に還元する」という想いを形にしました。これは今も私の経営哲学の根幹にあります。
       </p>
-      <p style="margin-top:40px;padding-top:32px;border-top:1px solid var(--line);color:rgba(255,255,255,.85);">
+      <p class="story-last-p" style="margin-top:40px;padding-top:32px;">
         この過程で一貫していたのは、<span class="hl">「感覚ではなく構造で考える」</span>という点です。<br/>
         現在はその経験をもとに、経営課題を構造で整理し、実行まで伴走しています。
       </p>
@@ -605,33 +650,16 @@
         </div>
       </div>
     </div>
-    <div class="fade" style="margin-top:48px;border-top:1px solid rgba(255,255,255,.1);padding-top:40px;">
-      <p style="font-size:11px;letter-spacing:.25em;color:var(--blue);text-align:center;margin-bottom:24px;">COLLABORATION PRODUCTS</p>
-      <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:28px;">ミルキー・白バラコーヒーなど、<strong style="color:#fff;">人気ブランドとのコラボ商品</strong>も多数展開。</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;max-width:700px;margin:0 auto;">
-        <div style="text-align:center;">
-          <img src="images/bl_standard.jpg" alt="ビーレジェンド 通常パッケージ" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
-          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">ビーレジェンドプロテイン</p>
-        </div>
-        <div style="text-align:center;">
-          <img src="images/bl_milky.jpg" alt="ビーレジェンド×ミルキー" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
-          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">ビーレジェンド× ミルキー（不二家）</p>
-        </div>
-        <div style="text-align:center;">
-          <img src="images/bl_shirobara.jpg" alt="ビーレジェンド×白バラコーヒー" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
-          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">ビーレジェンド×白バラコーヒー（大仙乳業）</p>
-        </div>
-        <div style="text-align:center;">
-          <img src="images/bl_jujutsu.jpg" alt="ビーレジェンド×呪術廻戦" style="width:100%;max-width:160px;border-radius:6px;border:1px solid rgba(255,255,255,.1);" />
-          <p style="font-size:11px;color:var(--muted2);margin-top:8px;">ビーレジェンド×呪術廻戦</p>
-        </div>
-      </div>
+    <div class="fade" style="margin-top:48px;border-top:1px solid rgba(255,255,255,.1);padding-top:40px;text-align:center;">
+      <p style="font-size:11px;letter-spacing:.25em;color:var(--blue);margin-bottom:24px;">PRODUCT</p>
+      <img src="images/bl_standard.jpg" alt="ビーレジェンド ホエイプロテイン" style="width:100%;max-width:220px;border-radius:8px;border:1px solid rgba(255,255,255,.15);box-shadow:0 8px 32px rgba(0,0,0,.3);" />
+      <p style="font-size:13px;color:var(--muted2);margin-top:12px;">ビーレジェンド ホエイプロテイン</p>
     </div>
   </div>
 </section>
 
 <!-- RESULTS -->
-<section>
+<section class="light-bg">
   <div class="container">
     <p class="section-label fade" style="text-align:center">RESULTS</p>
     <div class="divider fade" style="margin:0 auto 18px"></div>
@@ -719,8 +747,8 @@
         <p class="desc">副業ゼロから、単価と集客を戦略的に設計。わずか3ヶ月で本業超えを達成。</p>
       </div>
     </div>
-    <p class="fade" style="text-align:center;margin-top:36px;font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:32px;">
-      全事例に共通しているのは、<strong style="color:var(--amber2);">「構造の整理と優先順位の再設計」</strong>です。
+    <p class="fade results-footer" style="text-align:center;margin-top:36px;font-size:15px;padding-top:32px;">
+      全事例に共通しているのは、<strong>「構造の整理と優先順位の再設計」</strong>です。
     </p>
   </div>
 </section>
@@ -861,8 +889,31 @@
   </div>
 </section>
 
+<!-- UGANDA -->
+<section class="light-bg">
+  <div class="container">
+    <p class="section-label fade">SOCIAL CONTRIBUTION</p>
+    <div class="divider fade"></div>
+    <h2 class="section-title fade">2009年、ウガンダに<em>学校を建設。</em></h2>
+    <p class="fade" style="font-size:15px;color:var(--dark-muted);line-height:2;margin-bottom:36px;max-width:680px;">
+      経営で生み出した利益を、社会に還元したい。その想いから、友人たちとともにアフリカ・ウガンダへ渡り、現地の子どもたちのための学校建設プロジェクトに参加しました。この経験は「事業は手段、目的は世の中への貢献」という経営哲学の根幹となっています。
+    </p>
+    <div class="fade uganda-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(17,32,80,.12);">
+        <img src="images/uganda1.jpg" alt="ウガンダ 子どもたちと" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;" />
+      </div>
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(17,32,80,.12);">
+        <img src="images/uganda2.jpg" alt="ウガンダ 子どもたちと" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;" />
+      </div>
+      <div style="border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(17,32,80,.12);">
+        <img src="images/uganda3.jpg" alt="ウガンダ 学校完成" style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;" />
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BOOKS -->
-<section style="background:var(--navy2);">
+<section class="light-bg">
   <div class="container">
     <p class="section-label fade">BOOKS</p>
     <div class="divider fade"></div>
