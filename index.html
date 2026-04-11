@@ -96,17 +96,26 @@
       text-align: center; padding: 56px 32px 0;
       position: relative; overflow: hidden;
     }
+    /* ドットグリッドテクスチャ */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(126,200,248,.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none; z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
     .glow-l {
       position: absolute; left: -200px; top: -200px;
       width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(60,120,255,.1) 0%, transparent 65%);
-      pointer-events: none;
+      background: radial-gradient(circle, rgba(60,120,255,.12) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
     }
     .glow-r {
       position: absolute; right: -200px; bottom: -100px;
       width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(110,180,247,.07) 0%, transparent 65%);
-      pointer-events: none;
+      background: radial-gradient(circle, rgba(110,180,247,.09) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
     }
     .hero-eyebrow {
       font-size: clamp(13px, 1.6vw, 16px); letter-spacing: .2em; color: var(--blue);
@@ -528,28 +537,81 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 700px) {
-      header { padding: 14px 20px; }
-      section { padding: 48px 20px; }
+      /* 基本余白 */
+      header { padding: 12px 16px; }
+      section { padding: 40px 16px; }
+
       /* SP改行切り替え */
       .sp-br { display: inline; }
       .pc-br { display: none; }
-      /* ヒーロー余白 */
-      .hero { padding: 36px 24px 0; }
-      .hero-eyebrow { margin-bottom: 20px; font-size: 12px; }
-      .hero h1 { font-size: 21px; line-height: 1.65; margin-bottom: 20px; }
-      .hero-lead { font-size: 15px; line-height: 1.9; margin-bottom: 36px; }
-      /* スタッツ */
-      .hero-stats { flex-direction: column; border-radius: 6px; }
-      .hero-stat { border-right: none; border-bottom: 1px solid rgba(110,180,247,.15); padding: 16px 32px; }
-      .hero-stat:last-child { border-bottom: none; }
-      .hero-feats { flex-direction: column; }
-      .hero-feat { border-right: none; border-bottom: 1px solid var(--line); }
+
+      /* ── ヒーロー ── */
+      .hero { padding: 32px 16px 0; }
+      .hero-eyebrow { font-size: 11px; letter-spacing: .15em; margin-bottom: 18px; }
+      .hero h1 { font-size: 22px; line-height: 1.6; margin-bottom: 18px; }
+      .hero-lead { font-size: 14px; line-height: 1.9; margin-bottom: 28px; }
+
+      /* ヒーローstats：SP では横3列 */
+      .hero-stats {
+        flex-direction: row;
+        width: 100%; border-radius: 8px;
+        margin-bottom: 28px;
+      }
+      .hero-stat {
+        flex: 1; padding: 14px 8px;
+        border-right: 1px solid rgba(110,180,247,.15);
+        border-bottom: none;
+      }
+      .hero-stat:last-child { border-right: none; }
+      .hero-stat .n { font-size: 17px; }
+      .hero-stat .l { font-size: 9px; }
+
+      /* CTAボタン全幅 */
+      .btn-hero {
+        display: block; width: 100%; text-align: center;
+        padding: 17px 20px; font-size: 15px;
+      }
+      .hero-note { font-size: 11px; margin-top: 10px; margin-bottom: 0; }
+
+      /* hero-feats はSPでは非表示（ファーストビューを軽く） */
+      .hero-feats { display: none; }
+
+      /* ── セクション共通 ── */
+      .section-title { margin-bottom: 32px; }
+      .container { padding: 0; }
+
+      /* ── グリッド系 ── */
       .who-grid { grid-template-columns: 1fr; }
-      .profile-inner { flex-direction: column; }
+      .who-col.no { margin-top: 0; }
+      .results-grid { grid-template-columns: 1fr; }
+      .books-grid { grid-template-columns: 1fr; }
+      .book-card { flex-direction: column; }
+      .book-cover { width: 80px; }
+
+      /* ── プロフィール ── */
+      .profile-inner { flex-direction: column; align-items: center; }
+      .profile-avatar { width: 140px; margin-bottom: 24px; }
+      .profile-content h3 { text-align: center; }
+      .profile-title { text-align: center; }
+
+      /* ── ビーレジェンド ── */
+      .belegend-inner { flex-direction: column; }
+      .belegend-brand { width: 100%; }
+
+      /* ── フォーム ── */
       .form-row { grid-template-columns: 1fr; }
-      .form-wrap { padding: 32px 20px; }
+      .form-wrap { padding: 28px 16px; }
+
+      /* ── スティッキーCTA ── */
       .sticky-cta p { display: none; }
-      .sticky-cta { justify-content: center; padding: 14px 20px; }
+      .sticky-cta { justify-content: center; padding: 12px 16px; }
+      .btn-cta { width: 100%; text-align: center; font-size: 14px; padding: 13px 20px; }
+
+      /* ── サービスカード ── */
+      .svc-card { padding: 28px 18px; }
+
+      /* ── FAQ ── */
+      .faq-item { padding: 20px 0; }
     }
   </style>
 </head>
