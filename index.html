@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>鍵谷 健 コンサルティング | 経営の突破口を、共に見つける</title>
   <meta name="description" content="累計売上524億円の現役経営者が、あなたの経営課題を直接サポート。中小企業・成長企業の経営者専用コンサルティング。" />
+  <!-- OGP -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://takeshikagitani-netizen.github.io/kagitani-consulting/" />
+  <meta property="og:title" content="鍵谷 健 コンサルティング | 経営の突破口を、共に見つける" />
+  <meta property="og:description" content="累計売上524億円の現役経営者が、あなたの経営課題を直接サポート。中小企業・成長企業の経営者専用コンサルティング。" />
+  <meta property="og:image" content="https://takeshikagitani-netizen.github.io/kagitani-consulting/images/profile.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="鍵谷 健 コンサルティング | 経営の突破口を、共に見つける" />
+  <meta name="twitter:description" content="累計売上524億円の現役経営者が、あなたの経営課題を直接サポート。中小企業・成長企業の経営者専用コンサルティング。" />
+  <meta name="twitter:image" content="https://takeshikagitani-netizen.github.io/kagitani-consulting/images/profile.png" />
   <style>
     :root {
       --navy:   #112050;
@@ -509,12 +522,25 @@
     .fade { opacity: 0; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease; }
     .fade.visible { opacity: 1; transform: translateY(0); }
 
+    /* PC/SP 改行出し分け */
+    .sp-br { display: none; }
+    .pc-br { display: inline; }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 700px) {
       header { padding: 14px 20px; }
       section { padding: 48px 20px; }
+      /* SP改行切り替え */
+      .sp-br { display: inline; }
+      .pc-br { display: none; }
+      /* ヒーロー余白 */
+      .hero { padding: 36px 24px 0; }
+      .hero-eyebrow { margin-bottom: 20px; font-size: 12px; }
+      .hero h1 { font-size: 21px; line-height: 1.65; margin-bottom: 20px; }
+      .hero-lead { font-size: 15px; line-height: 1.9; margin-bottom: 36px; }
+      /* スタッツ */
       .hero-stats { flex-direction: column; border-radius: 6px; }
-      .hero-stat { border-right: none; border-bottom: 1px solid rgba(110,180,247,.15); }
+      .hero-stat { border-right: none; border-bottom: 1px solid rgba(110,180,247,.15); padding: 16px 32px; }
       .hero-stat:last-child { border-bottom: none; }
       .hero-feats { flex-direction: column; }
       .hero-feat { border-right: none; border-bottom: 1px solid var(--line); }
@@ -547,13 +573,13 @@
   <div class="glow-r"></div>
   <div class="hero-eyebrow">現役経営者による実践型 伴走コンサルティング</div>
   <h1>
-    売上が伸びない。組織が機能しない。<br/>
-    その原因は、感覚ではなく<em>「構造」</em>にあります。<br/>
-    構造を分解すれば、打ち手は明確になります。<br/>
+    売上が伸びない。<br class="sp-br"/>組織が機能しない。<br class="pc-br"/>
+    その原因は、感覚ではなく<br class="sp-br"/><em>「構造」</em>にあります。<br class="pc-br"/>
+    構造を分解すれば、<br class="sp-br"/>打ち手は明確になります。<br/>
     <em>そして、それは再現可能です。</em>
   </h1>
   <p class="hero-lead">
-    手元2万円・107人に反対されながら起業し、20年で累計売上524億円。<br/>
+    手元2万円・107人に反対されながら起業し、<br class="sp-br"/>20年で累計売上524億円。<br/>
     現役経営者が、机上ではなく実務で<br/>あなたの経営課題を整理し、動かします。
   </p>
   <div class="hero-stats">
