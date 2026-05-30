@@ -535,13 +535,10 @@
     .light-bg .book-info p { color: var(--dark-muted); }
 
     /* ─── IMAGE FRAME / BAND ─── */
-    .img-frame { border-radius:16px; overflow:hidden; border:1px solid rgba(17,32,80,.08);
-      box-shadow:0 18px 46px rgba(17,32,80,.14);
-      background:linear-gradient(135deg,#e3ecf9,#f1f5fc); }
-    .img-frame img { width:100%; height:100%; display:block; object-fit:cover; }
-    .img-frame.ph { aspect-ratio:4/3; display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center; }
-    .img-frame.ph svg { width:60px; height:60px; opacity:.4; }
-    .img-frame.ph::after { content:'IMAGE'; font-size:10px; letter-spacing:.28em; color:rgba(17,32,80,.32); font-weight:700; }
+    .img-frame { border-radius:20px; overflow:hidden; border:1px solid rgba(17,32,80,.08);
+      box-shadow:0 22px 50px rgba(17,32,80,.16);
+      background:linear-gradient(150deg,#eef4fc 0%,#f6f9fe 100%); padding:14px; }
+    .img-frame img, .img-frame svg { width:100%; height:auto; display:block; }
     .img-band { width:100%; overflow:hidden; border-radius:18px;
       box-shadow:0 18px 46px rgba(17,32,80,.14); border:1px solid rgba(17,32,80,.08);
       background:linear-gradient(135deg,#e3ecf9,#f1f5fc); }
@@ -617,9 +614,6 @@
       .mech-grid{ grid-template-columns:1fr; gap:28px; }
       .price-grid{ grid-template-columns:1fr; }
       .price-card{ padding:32px 24px; }
-      /* スマホでは画像枠を横長バナーにして高さを抑える */
-      .img-frame, .img-frame.ph{ aspect-ratio:16/9; height:auto; min-height:0; }
-      .img-frame.ph svg{ width:46px; height:46px; }
     }
 
     /* ─── ANIMATIONS ─── */
@@ -821,8 +815,32 @@
         </div>
       </div>
       <div class="img-frame">
-        <!-- 写真がある場合は images/coaching_session.jpg を置くと自動表示。無い間はイラストが表示されます -->
-        <img src="images/coaching_session.jpg" alt="体験コーチングの様子" onerror="this.style.display='none';this.parentElement.classList.add('ph');this.parentElement.innerHTML='<svg width=96 height=96 viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#2f6bb0\' stroke-width=1.2 stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M9 18h6\'/><path d=\'M10 21h4\'/><path d=\'M12 3a6 6 0 0 0-4 10.5c.5.5 1 1.5 1 2.5h6c0-1 .5-2 1-2.5A6 6 0 0 0 12 3z\'/></svg>'" />
+        <svg viewBox="0 0 420 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="散らかった考えが、整理されていくイメージ">
+          <defs>
+            <linearGradient id="mechNavy" x1="64" y1="128" x2="356" y2="192" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#13245a"/><stop offset="1" stop-color="#244089"/>
+            </linearGradient>
+          </defs>
+          <circle cx="356" cy="58" r="74" fill="#2f6bb0" opacity="0.07"/>
+          <circle cx="64" cy="278" r="58" fill="#c9973d" opacity="0.09"/>
+          <!-- card 1 -->
+          <rect x="64" y="54" width="292" height="58" rx="15" fill="#ffffff" stroke="#e2e8f3"/>
+          <circle cx="96" cy="83" r="11" fill="#eaf1fb" stroke="#2f6bb0" stroke-width="1.6"/>
+          <path d="M91 83l4 4 7-8" stroke="#2f6bb0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="120" y="74" width="158" height="8" rx="4" fill="#c9d3e6"/>
+          <rect x="120" y="90" width="96" height="8" rx="4" fill="#e4e9f3"/>
+          <!-- card 2 (active) -->
+          <rect x="64" y="128" width="292" height="64" rx="15" fill="url(#mechNavy)"/>
+          <circle cx="96" cy="160" r="12" fill="#ffffff" fill-opacity="0.12" stroke="#e8c071" stroke-width="1.6"/>
+          <path d="M91 160l4 4 7-8" stroke="#e8c071" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="120" y="150" width="170" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.92"/>
+          <rect x="120" y="167" width="104" height="9" rx="4.5" fill="#ffffff" fill-opacity="0.4"/>
+          <!-- card 3 -->
+          <rect x="64" y="208" width="292" height="58" rx="15" fill="#ffffff" stroke="#e2e8f3"/>
+          <circle cx="96" cy="237" r="11" fill="#f4f7fc" stroke="#9fb2cf" stroke-width="1.6"/>
+          <rect x="120" y="228" width="138" height="8" rx="4" fill="#c9d3e6"/>
+          <rect x="120" y="244" width="84" height="8" rx="4" fill="#e4e9f3"/>
+        </svg>
       </div>
     </div>
   </div>
