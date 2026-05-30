@@ -617,6 +617,9 @@
       .mech-grid{ grid-template-columns:1fr; gap:28px; }
       .price-grid{ grid-template-columns:1fr; }
       .price-card{ padding:32px 24px; }
+      /* スマホでは画像枠を横長バナーにして高さを抑える */
+      .img-frame, .img-frame.ph{ aspect-ratio:16/9; height:auto; min-height:0; }
+      .img-frame.ph svg{ width:46px; height:46px; }
     }
 
     /* ─── ANIMATIONS ─── */
