@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- アクセス解析（Google Analytics 4）。GA_ID を本物に差し替えると動く（2026-10-15） -->
+<script>
+  window.GA_ID = 'G-7MNCBVRLHG';
+  window.track = function (name, params) { if (window.gtag) gtag('event', name, params || {}); };
+  if (!/X{6}/.test(window.GA_ID)) {
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_ID; document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', window.GA_ID);
+  }
+</script>
 <title>ヌッとアラーム｜音が鳴らないのに、見逃さないアラーム</title>
 <meta name="description" content="パソコンで仕事をしている時間に使うことだけを考えたアラーム。時間になると、すべての画面の下から大きな表示がヌッと出てきます。無料。">
 <meta property="og:type" content="website">
@@ -373,7 +385,7 @@
 
         <div class="dl-done" id="dlDone">
           <p class="dl-lead">ご登録ありがとうございます。下のボタンからダウンロードしてください。</p>
-          <a class="btn btn-gold" href="https://github.com/takeshikagitani-netizen/kagitani-consulting/releases/download/nutto-alarm-v1.0.0/NuttoAlarm-Setup-1.0.0.exe">ダウンロード（約80MB）</a>
+          <a class="btn btn-gold" onclick="track('dl_click')" href="https://github.com/takeshikagitani-netizen/kagitani-consulting/releases/download/nutto-alarm-v1.0.0/NuttoAlarm-Setup-1.0.0.exe">ダウンロード（約80MB）</a>
           <ol class="install">
             <li>ダウンロードした「NuttoAlarm-Setup-1.0.0.exe」を開きます</li>
             <li>青い「WindowsによってPCが保護されました」という画面が出たら、「詳細情報」→「実行」を押します（個人で作ったアプリに表示される確認画面です）</li>
@@ -477,6 +489,7 @@
         headers: { Accept: 'application/json' },
       });
       if (!res.ok) throw new Error(res.status);
+      track('inquiry_submit');
       form.style.display = 'none';
       document.getElementById('thanks').style.display = 'block';
     } catch (err) {
@@ -508,11 +521,13 @@
         headers: { Accept: 'application/json' },
       });
       if (!res.ok) throw new Error(res.status);
+      track('dl_register');
       dlForm.style.display = 'none';
       document.getElementById('dlDone').style.display = 'block';
     } catch (err) {
       btn.disabled = false;
       btn.textContent = '登録してダウンロードへ進む';
+      track('dl_register_error', { detail: String(err) });
       dlMsg.textContent = '送信できませんでした。時間をおいて、もう一度お試しください。';
       dlMsg.classList.add('err');
     }
