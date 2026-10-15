@@ -3,6 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- アクセス解析（Google Analytics 4・2026-10-15） -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7MNCBVRLHG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-7MNCBVRLHG');
+    window.track = function (name, params) { gtag('event', name, params || {}); };
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="#contact"], a[href*="timerex"], a[href*="nutto-alarm"]');
+      if (a) track('cta_click', { link: a.getAttribute('href'), label: (a.innerText || '').trim().slice(0, 40) });
+    });
+  </script>
   <title>鍵谷 健 | 次の一歩を、一人で抱え込まずに整理する</title>
   <meta name="description" content="サラリーマンの副業・起業準備・個人事業・中小経営まで。手元2万円から20年で累計524億円を作った現役経営者が、あなたの「次の一手」を一緒に整理します。" />
   <!-- OGP -->
@@ -1414,6 +1426,7 @@
           <div class="privacy-box">
             <p><strong>【個人情報の取り扱いについて】</strong></p>
             <p>ご入力いただいた個人情報は、株式会社Real Styleの<a href="https://store.belegend.jp/ext/privacy.html" target="_blank" rel="noopener" style="color:var(--amber2);text-decoration:underline;">個人情報保護方針</a>に基づき、コンサルティング検討・業務遂行の目的のみに使用します。ご本人の同意なく第三者へ開示・提供することは一切ありません。</p>
+            <p>このページでは、閲覧状況を把握するために Google LLC の「Google アナリティクス」を利用しています。閲覧したページ、参照元、端末やブラウザの種類などの情報が Google に送信されます（個人を特定する情報は含みません）。詳細は Google のプライバシーポリシー（https://policies.google.com/privacy）をご確認ください。</p>
             <p>後日ご提供いただく情報も同様に厳重に管理（日本国内にて保管）し、外部への漏洩は一切ありません。正式なご契約前に秘密保持契約（NDA）を締結します。</p>
             <p>個人情報に関するお問い合わせ：<strong>株式会社Real Style 個人情報問合せ窓口</strong>　TEL: 0120-242-044 / Email: info@real-style.co.jp（平日 9:30〜13:00）</p>
           </div>
@@ -1485,6 +1498,7 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
+        track('inquiry_submit');
         document.getElementById('form-container').style.display = 'none';
         document.getElementById('success-msg').style.display = 'block';
       } else {
@@ -1494,6 +1508,7 @@
         btn.style.fontSize = '13px';
         btn.disabled = false;
         console.error('Formspree error', res.status, errs);
+        track('inquiry_error', { status: res.status });
         alert('エラー詳細 (開発者向け): ' + res.status + ' - ' + errs);
       }
     } catch(err) {
@@ -1517,9 +1532,5 @@
      alt="" width="1" height="1"
      style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none" referrerpolicy="no-referrer-when-downgrade" />
 
-<!-- GoatCounter アクセス解析（ダッシュボード: https://kagitani.goatcounter.com ）
-     ※ goatcounter.com でコード「kagitani」のアカウント作成が必要 -->
-<script data-goatcounter="https://kagitani.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
