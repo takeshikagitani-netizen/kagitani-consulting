@@ -76,23 +76,22 @@ font_small = get_font(26)
 font_num = get_font(72)
 
 # 上：肩書ラベル（ゴールド）
-draw.text((TX, 70), '経営コンサルタント', font=font_small, fill=GOLD2)
+draw.text((TX, 70), '後継社長専門の、幹部づくり屋。', font=font_small, fill=GOLD2)
 
 # サイト名（大）
 draw.text((TX, 110), '鍵谷 健', font=font_big, fill=WHITE)
-draw.text((TX, 180), 'コンサルティング', font=font_big, fill=WHITE)
 
 # 区切り線
-draw.line([(TX, 270), (TX + 380, 270)], fill=GOLD, width=3)
+draw.line([(TX, 200), (TX + 380, 200)], fill=GOLD, width=3)
 
-# キャッチ
-draw.text((TX, 295), '経営の突破口を、', font=font_med, fill=WHITE)
-draw.text((TX, 340), '共に見つける', font=font_med, fill=WHITE)
+# ひとことコンセプト（2026-10-13確定の2行・言い換えない）
+draw.text((TX, 225), '現場に入る経営参謀', font=font_med, fill=WHITE)
+draw.text((TX, 275), '社長を不要とする会社づくり', font=font_med, fill=WHITE)
 
 # 数字訴求
-draw.text((TX, 425), '累計売上', font=font_small, fill=GREY)
-draw.text((TX, 460), '524億円', font=font_num, fill=GOLD2)
-draw.text((TX, 555), '現役経営者が直接サポート', font=font_small, fill=GREY)
+draw.text((TX, 375), '累計売上', font=font_small, fill=GREY)
+draw.text((TX, 410), '600億円弱', font=font_num, fill=GOLD2)
+draw.text((TX, 520), '29事業を、私が抜けても回る形に', font=font_small, fill=GREY)
 
 # 保存（OGPは2MB未満が望ましい、JPG品質90）
 img.save(OUT, 'JPEG', quality=90, optimize=True)
